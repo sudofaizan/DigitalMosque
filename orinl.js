@@ -5,6 +5,15 @@ let dhuhrAudio = new Audio('2.mp3');
 let asarAudio = new Audio('3.mp3');
 let magreebAudio = new Audio('4.mp3');
 let ishaAudio = new Audio('5.mp3');
+const imagesToPreload = [
+  'src/steps/0.png', 'src/steps/1.png', 'src/steps/2.png', 'src/steps/3.png',
+  'src/steps/4.png', 'src/steps/5.png', 'src/steps/6.png', 'src/steps/7.png'
+];
+
+imagesToPreload.forEach(src => {
+  const img = new Image();
+  img.src = src;
+});
 
 let azhanPlaying = false;
 let azhanStoppedManually = false;
