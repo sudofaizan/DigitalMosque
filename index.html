@@ -8,28 +8,28 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia&effect=neon|outline|emboss|shadow-multiple">
 
     <center><h1>Digital Mosque</h1>
-        <center><button id="startButton" onclick="enableAudio()">Enable Audio Play Permission</button></center>
+        <center><button id="startButton" class="btn" onclick="enableAudio()">Enable Audio Play Permission</button></center>
+<p></p>
 
+    <p id="currentTime" class="txt"></p>
+    <p id="prayerTime" class="txt"></p>
+    <p id="BFS" class="txt"></p>
+    <p id="F" class="txt"></p>
+    <p id="AFS" class="txt"></p>
+    <p id="AFN" class="txt"></p>
+    <p id="AFW" class="txt"></p>
+    <p id="stepname" class="txt"  style="display: none;">Loading audio and image...</p>
 
-    <p id="currentTime"></p>
-    <p id="prayerTime"></p>
-    <p id="BFS"></p>
-    <p id="F"></p>
-    <p id="AFS"></p>
-    <p id="AFN"></p>
-    <p id="AFW"></p>
-    
+    <p></p>
     <center><img src="" class="nmzimg" id="NamazImage"></center>
-    <center>
-        <p id="stepname" style="display: none;"></p>
-       </center>
-    <button id="toggleButton" onclick="togglePrayer()">Start Fard Namaz</button>
+
+    <button id="toggleButton" class="btn" onclick="togglePrayer()">Start Fard Namaz</button>
 
 
-    <button id="stopAzhanButton" onclick="stopAzhan()" style="display:none;">Stop Azan</button>
+    <button id="stopAzhanButton"  class="btn" onclick="stopAzhan()" style="display:none;">Stop Azan</button>
     </center>
     <p></p>
-    <center>  <button id="Qibla" onclick="window.location.href='wuduh.html'">Learn Wuduh</button></center>   
+    <center>  <button id="Qibla"  class="btn" onclick="window.location.href='wuduh.html'">Learn Wuduh</button></center>   
 
 </head>
 <body>
