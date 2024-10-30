@@ -79,7 +79,7 @@ if (prayer = " " )
     } else if (audioEnabled && hours === 18 && minutes === 45 && !azhanPlaying && !azhanStoppedManually) {
         playAzhan();
     } else if (hours >= 18 && hours < 20) {
-        prayer = 'Maghrib';
+        prayer = 'Maghrib'; 
         Sunnat = "2";
         Nafal = "2";
         Farad = "3";
@@ -88,7 +88,7 @@ if (prayer = " " )
         AFS = "2" //after fard sunnah
         AFN = "0"; //after fard nafal
         AFW = "0" //after fard wajib
-        currentAudio = magreebAudio;
+        currentAudio = magreebAudio; 
         toggleButton.style.display = 'inline-block';
     } else if (audioEnabled && hours === 20 && minutes === 45 && !azhanPlaying && !azhanStoppedManually) {
         playAzhan();
@@ -119,6 +119,7 @@ function updateCurrentTime() {
 function imgupdstrt(){
     const image = document.getElementById('NamazImage');
     image.src = "src/steps/3.png";
+document.getElementById('stepname').textContent = `Current Step Name is: Qiyaam`;
     image.style.display ='inline-block';
     // document.getElementById('prayerTime').style.display ="none";
     document.getElementById('BFS').style.display ="none";
@@ -133,8 +134,157 @@ function imgupdstrt(){
    
 
     var cur_time = currentAudio.currentTime;
+if ( prayer = 'Isha' )
+{/// start of isha 4 rakah
+  document.getElementById('stepname').style.display ='inline-block'; // popup inline block
+  // image.style.display ='none';
 
-if (prayer = "Dhuhr")
+  if (cur_time > 5)
+    {
+      image.src = "src/steps/0.png";
+document.getElementById('stepname').textContent = `Current Step Name is: Takbeer`;
+      
+
+    }
+    if (cur_time > 7)
+      {
+        image.src = "src/steps/1.png";
+document.getElementById('stepname').textContent = `Current Step Name is: AL-Qiyaam`;
+
+      }
+      if (cur_time > 50)
+        {
+          image.src = "src/steps/2.png";
+document.getElementById('stepname').textContent = `Current Step Name is: Ruku`;
+
+        }
+        if (cur_time > 58)
+          {
+            image.src = "src/steps/3.png";
+document.getElementById('stepname').textContent = `Current Step Name is: Qiyaam`;
+          }
+          if (cur_time > 64)
+            {
+              image.src = "src/steps/5.png";
+document.getElementById('stepname').textContent = `Current Step Name is: Sajjadh`;
+            }
+            if (cur_time > 70)
+              {
+                image.src = "src/steps/4.png";
+document.getElementById('stepname').textContent = `Current Step Name is: Tashahhud`;
+                }
+              if (cur_time > 74)
+                {
+                  image.src = "src/steps/5.png";
+document.getElementById('stepname').textContent = `Current Step Name is: Sajjadh`;
+                    }
+                if (cur_time > 74)
+                  {
+                    image.src = "src/steps/5.png";
+document.getElementById('stepname').textContent = `Current Step Name is: Sajjadh`;
+                        }
+                  if (cur_time > 80)
+                    {
+                      image.src = "src/steps/1.png";
+document.getElementById('stepname').textContent = `Current Step Name is: AL-Qiyaam`;
+
+                            }
+                    if (cur_time > 125)
+                      {
+                        image.src = "src/steps/2.png";
+document.getElementById('stepname').textContent = `Current Step Name is: Ruku`;
+
+                                }
+                      if (cur_time > 132)
+                        {
+                          image.src = "src/steps/3.png";
+document.getElementById('stepname').textContent = `Current Step Name is: Qiyaam`;
+                                    }
+                        if (cur_time > 136)
+                          {
+                            image.src = "src/steps/5.png";
+document.getElementById('stepname').textContent = `Current Step Name is: Sajjadh`;
+                                        }
+                          if (cur_time > 142)
+                            {
+                              image.src = "src/steps/4.png";
+document.getElementById('stepname').textContent = `Current Step Name is: Tashahhud`;
+                                            }
+                            if (cur_time > 152)
+                              {
+                                image.src = "src/steps/4.png";
+document.getElementById('stepname').textContent = `Current Step Name is: Tashahhud`;
+                                                }
+                              if (cur_time > 216)
+                                {
+                                  image.src = "src/steps/3.png";
+document.getElementById('stepname').textContent = `Current Step Name is: Qiyaam`;
+                                                    }
+                                if (cur_time > 221)
+                                  {
+                                    image.src = "src/steps/5.png";
+document.getElementById('stepname').textContent = `Current Step Name is: Sajjadh`;
+                                                        }
+                                  if (cur_time > 227)
+                                    {
+                                      image.src = "src/steps/4.png";
+document.getElementById('stepname').textContent = `Current Step Name is: Tashahhud`;
+                                                            }
+                                    if (cur_time > 231)
+                                      {
+                                        image.src = "src/steps/5.png";
+document.getElementById('stepname').textContent = `Current Step Name is: Sajjadh`;
+                                                                }
+                                      if (cur_time > 238)
+                                        {
+                                          image.src = "src/steps/1.png";
+document.getElementById('stepname').textContent = `Current Step Name is: AL-Qiyaam`;
+
+                                                                    }
+                                        if (cur_time > 272)
+                                          {
+                                            image.src = "src/steps/2.png";
+document.getElementById('stepname').textContent = `Current Step Name is: Ruku`;
+
+                                                                        }
+                                          if (cur_time > 280)
+                                            {
+                                              image.src = "src/steps/3.png";
+document.getElementById('stepname').textContent = `Current Step Name is: Qiyaam`;
+                                                                            }
+                                            if (cur_time > 284)
+                                              {
+                                                image.src = "src/steps/5.png";
+document.getElementById('stepname').textContent = `Current Step Name is: Sajjadh`;
+                                                                                }
+                                              if (cur_time > 290)
+                                                {
+                                                  image.src = "src/steps/4.png";
+document.getElementById('stepname').textContent = `Current Step Name is: Tashahhud`;
+                                                                                    }
+                                                if (cur_time > 295)
+                                                  {
+                                                    image.src = "src/steps/5.png";
+document.getElementById('stepname').textContent = `Current Step Name is: Sajjadh`;
+                                                                                        }
+                                                  if (cur_time > 301)
+                                                    {
+                                                      image.src = "src/steps/4.png";
+document.getElementById('stepname').textContent = `Current Step Name is: Tashahhud`;
+                                                                                            }
+                                                    if (cur_time > 349)
+                                                      {
+                                                        image.src = "src/steps/6.png";
+document.getElementById('stepname').textContent = `Current Step Name is: Salam`;
+                                                                                                }
+                                                      if (cur_time > 352)
+                                                        {
+                                                          image.src = "src/steps/7.png";
+                                                                                                    }
+    }
+
+
+else if ( prayer = "Dhuhr" )
 {/// start of zoher 4 rakah
   document.getElementById('stepname').style.display ='inline-block'; // popup inline block
   
@@ -142,16 +292,19 @@ if (prayer = "Dhuhr")
       if (cur_time > 7)
       {
         image.src = "src/steps/0.png";
+document.getElementById('stepname').textContent = `Current Step Name is: Takbeer`;
         document.getElementById('stepname').textContent = `Current Step Name is: Takbeer`;
       }
       if (cur_time > 9)
         {
           image.src = "src/steps/1.png";
+
           document.getElementById('stepname').textContent = `Current Step Name is: AL-Qiyaam`;
         }
         if (cur_time > 67)
             {
               image.src = "src/steps/2.png";
+
               document.getElementById('stepname').textContent = `Current Step Name is: Ruku`;
 
             }
@@ -182,12 +335,14 @@ if (prayer = "Dhuhr")
                         if (cur_time > 106)
                           {
                             image.src = "src/steps/1.png";
+
                             document.getElementById('stepname').textContent = `Current Step Name is: AL-Qiyaam`;
 
                           }
                           if (cur_time > 162)
                             {
                               image.src = "src/steps/2.png";
+
                               document.getElementById('stepname').textContent = `Current Step Name is: Ruku`;
 
                             }
@@ -211,25 +366,27 @@ if (prayer = "Dhuhr")
                                   }
                                   if (cur_time > 191)
                                     {
-                                      image.src = "src/steps/5.png"; 
+                                      image.src = "src/steps/5.png";
                                       document.getElementById('stepname').textContent = `Current Step Name is: Sajjadh`;
 
                                     }
                                     if (cur_time > 199)
                                       {
-                                        image.src = "src/steps/4.png"; 
+                                        image.src = "src/steps/4.png";
                                         document.getElementById('stepname').textContent = `Current Step Name is: Tashahhud`;
 
                                       }
                                       if (cur_time > 224)
                                         {
-                                          image.src = "src/steps/1.png"; 
+                                          image.src = "src/steps/1.png";
+ 
                                           document.getElementById('stepname').textContent = `Current Step Name is: AL-Qiyaam`;
 
                                         }
                                         if (cur_time > 270)
                                           {
-                                            image.src = "src/steps/2.png"; 
+                                            image.src = "src/steps/2.png";
+ 
                                             document.getElementById('stepname').textContent = `Current Step Name is: Ruku`;
 
                                           }
@@ -241,67 +398,72 @@ if (prayer = "Dhuhr")
                                             }
                                             if (cur_time > 287)
                                               {
-                                                image.src = "src/steps/5.png"; 
+                                                image.src = "src/steps/5.png";
                                                 document.getElementById('stepname').textContent = `Current Step Name is: Sajjadh`;
 
                                               }
                                               if (cur_time > 295)
                                                 {
-                                                  image.src = "src/steps/4.png"; 
+                                                  image.src = "src/steps/4.png";
                                                   document.getElementById('stepname').textContent = `Current Step Name is: Tashahhud`;
 
                                                 }
                                                 if (cur_time > 300)
                                                   {
-                                                    image.src = "src/steps/5.png"; 
+                                                    image.src = "src/steps/5.png";
                                                     document.getElementById('stepname').textContent = `Current Step Name is: Sajjadh`;
 
                                                   }
                                                   if (cur_time > 308)
                                                     {
-                                                      image.src = "src/steps/1.png"; 
+                                                      image.src = "src/steps/1.png";
+ 
                                                       document.getElementById('stepname').textContent = `Current Step Name is: AL-Qiyaam`;
 
                                                     }
                                                     if (cur_time > 353)
                                                       {
-                                                        image.src = "src/steps/2.png"; 
+                                                        image.src = "src/steps/2.png";
+ 
                                                         document.getElementById('stepname').textContent = `Current Step Name is: Ruku`;
 
                                                       }
                                                       if (cur_time > 363)
                                                         {
-                                                          image.src = "src/steps/3.png"; 
+                                                          image.src = "src/steps/3.png";
                                                           document.getElementById('stepname').textContent = `Current Step Name is: Qiyaam`;
 
                                                         }
                                                         if (cur_time > 368)
                                                           {
-                                                            image.src = "src/steps/5.png"; 
+                                                            image.src = "src/steps/5.png";
                                                             document.getElementById('stepname').textContent = `Current Step Name is: Sajjadh`;
 
                                                           }
                                                           if (cur_time > 376)
                                                             {
-                                                              image.src = "src/steps/4.png"; 
+                                                              image.src = "src/steps/4.png";
+
                                                               document.getElementById('stepname').textContent = `Current Step Name is: Tashahhud`;
 
                                                             }
                                                             if (cur_time > 383)
                                                               {
-                                                                image.src = "src/steps/5.png"; 
+                                                                image.src = "src/steps/5.png";
+
                                                                 document.getElementById('stepname').textContent = `Current Step Name is: Sajjadh`;
 
                                                               }
                                                               if (cur_time > 391)
                                                                 {
-                                                                  image.src = "src/steps/4.png"; 
+                                                                  image.src = "src/steps/4.png";
+
                                                                   document.getElementById('stepname').textContent = `Current Step Name is: Tashahhud`;
 
                                                                 }
                                                                 if (cur_time > 452)
                                                                   {
-                                                                    image.src = "src/steps/6.png"; 
+                                                                    image.src = "src/steps/6.png";
                                                                     document.getElementById('stepname').textContent = `Current Step Name is: Salam`;
 
                                                                   }
@@ -312,7 +474,205 @@ if (prayer = "Dhuhr")
 
                                                                     }  /// end of zoher 4 rakah
 
+
 }
+
+else if ( prayer = 'Asar' )
+    {/// start of asar 4 rakah
+      document.getElementById('stepname').style.display ='inline-block'; // popup inline block    
+      document.getElementById('stepname').textContent = cur_time;  
+
+          if (cur_time > 5)
+          {
+            image.src = "src/steps/0.png";
+            document.getElementById('stepname').textContent = `Current Step Name is: Takbeer`;
+            
+          }
+
+          if (cur_time > 7)
+            {
+              image.src = "src/steps/1.png";
+              document.getElementById('stepname').textContent = `Current Step Name is: AL-Qiyaam`;
+
+              
+            }
+            if (cur_time > 64)
+                {
+                  image.src = "src/steps/2.png";
+                  document.getElementById('stepname').textContent = `Current Step Name is: Ruku`;
+
+                  
+                }
+                if (cur_time > 75)
+                    {
+                      image.src = "src/steps/3.png";
+                      document.getElementById('stepname').textContent = `Current Step Name is: Qiyaam`;
+                      
+                    }
+                    if (cur_time > 80)
+                        {
+                          image.src = "src/steps/5.png";
+                          document.getElementById('stepname').textContent = `Current Step Name is: Sajjadh`;
+                          
+                        }
+                        if (cur_time > 89)
+                            {
+                              image.src = "src/steps/4.png";
+                              document.getElementById('stepname').textContent = `Current Step Name is: Tashahhud`;
+                              
+                            }
+                            if (cur_time > 95)
+                                {
+                                  image.src = "src/steps/5.png";
+                                  document.getElementById('stepname').textContent = `Current Step Name is: Sajjadh`;
+                                  
+                                }
+                                if (cur_time > 102)
+                                    {
+                                      image.src = "src/steps/1.png";
+                                      document.getElementById('stepname').textContent = `Current Step Name is: AL-Qiyaam`;
+
+                                      
+                                    }
+                                    if (cur_time > 107 )
+                                      {
+                                        image.src = "src/steps/1.png";
+                                        document.getElementById('stepname').textContent = `Current Step Name is: AL-Qiyaam`;
+
+                                        
+                                      }
+                                      if (cur_time > 160 )
+                                        {
+                                          image.src = "src/steps/2.png";
+                                          document.getElementById('stepname').textContent = `Current Step Name is: Ruku`;
+
+                                          
+                                        }
+                                        if (cur_time > 170 )
+                                          {
+                                            image.src = "src/steps/3.png";
+                                            document.getElementById('stepname').textContent = `Current Step Name is: Qiyaam`;
+                                            
+                                          }
+                                          if (cur_time > 176 )
+                                            {
+                                              image.src = "src/steps/5.png";
+                                              document.getElementById('stepname').textContent = `Current Step Name is: Sajjadh`;
+                                              
+                                            }
+                                            if (cur_time > 183 )
+                                              {
+                                                image.src = "src/steps/4.png";
+                                                document.getElementById('stepname').textContent = `Current Step Name is: Tashahhud`;
+                                                
+                                              }
+                                              if (cur_time > 189 )
+                                                {
+                                                  image.src = "src/steps/5.png";
+                                                  document.getElementById('stepname').textContent = `Current Step Name is: Sajjadh`;
+                                                  
+                                                }
+                                                if (cur_time > 197 )
+                                                  {
+                                                    image.src = "src/steps/4.png";
+                                                    document.getElementById('stepname').textContent = `Current Step Name is: Tashahhud`;
+                                                    
+                                                  }
+                                                  if (cur_time > 223 )
+                                                    {
+                                                      image.src = "src/steps/1.png";
+                                                      document.getElementById('stepname').textContent = `Current Step Name is: AL-Qiyaam`;
+
+                                                      
+                                                    }
+                                                    if (cur_time > 269 )
+                                                      {
+                                                        image.src = "src/steps/2.png";
+                                                        document.getElementById('stepname').textContent = `Current Step Name is: Ruku`;
+
+                                                        
+                                                      }
+                                                      if (cur_time > 278 )
+                                                        {
+                                                          image.src = "src/steps/3.png";
+                                                          document.getElementById('stepname').textContent = `Current Step Name is: Qiyaam`;
+                                                          
+                                                        }
+                                                        if (cur_time > 285 )
+                                                          {
+                                                            image.src = "src/steps/5.png";
+                                                            document.getElementById('stepname').textContent = `Current Step Name is: Sajjadh`;
+                                                            
+                                                          }
+                                                          if (cur_time > 292)
+                                                            {
+                                                              image.src = "src/steps/4.png";
+                                                              document.getElementById('stepname').textContent = `Current Step Name is: Tashahhud`;
+                                                              
+                                                            }
+                                                            if (cur_time > 298 )
+                                                              {
+                                                                image.src = "src/steps/5.png";
+                                                                document.getElementById('stepname').textContent = `Current Step Name is: Sajjadh`;
+                                                                
+                                                              }
+                                                              if (cur_time > 306 )
+                                                                {
+                                                                  image.src = "src/steps/1.png";
+                                                                  document.getElementById('stepname').textContent = `Current Step Name is: AL-Qiyaam`;
+
+                                                                  
+                                                                }
+                                                                if (cur_time > 350 )
+                                                                  {
+                                                                    image.src = "src/steps/2.png";
+                                                                    document.getElementById('stepname').textContent = `Current Step Name is: Ruku`;
+
+                                                                    
+                                                                  }
+                                                                  if (cur_time > 361 )
+                                                                    {
+                                                                      image.src = "src/steps/3.png";
+                                                                      document.getElementById('stepname').textContent = `Current Step Name is: Qiyaam`;
+                                                                      
+                                                                    }
+                                                                    if (cur_time > 367 )
+                                                                      {
+                                                                        image.src = "src/steps/5.png";
+                                                                        document.getElementById('stepname').textContent = `Current Step Name is: Sajjadh`;
+                                                                        
+                                                                      }
+                                                                      if (cur_time > 374 )
+                                                                        {
+                                                                          image.src = "src/steps/4.png";
+                                                                          document.getElementById('stepname').textContent = `Current Step Name is: Tashahhud`;
+                                                                          
+                                                                        }
+                                                                        if (cur_time > 380 )
+                                                                          {
+                                                                            image.src = "src/steps/5.png";
+                                                                            document.getElementById('stepname').textContent = `Current Step Name is: Sajjadh`;
+                                                                            
+                                                                          }
+                                                                          if (cur_time > 388 )
+                                                                            {
+                                                                              image.src = "src/steps/4.png";
+                                                                              document.getElementById('stepname').textContent = `Current Step Name is: Tashahhud`;
+                                                                              
+                                                                            }
+                                                                            if (cur_time > 450 )
+                                                                              {
+                                                                                image.src = "src/steps/6.png";
+                                                                                document.getElementById('stepname').textContent = `Current Step Name is: Salam`;
+                                                                                
+                                                                              }
+                                                                              if (cur_time > 453 )
+                                                                                {
+                                                                                  image.src = "src/steps/7.png";
+                                                                                  
+                                                                                }
+        }//asar end
+
 
 
     }, 20); // Update every second
@@ -321,6 +681,7 @@ if (prayer = "Dhuhr")
 function imgupdstp(){
     const image = document.getElementById('NamazImage');
     image.src = "src/steps/0.png";
+document.getElementById('stepname').textContent = `Current Step Name is: Takbeer`;
     image.style.display ='none'; 
     document.getElementById('prayerTime').style.display ='block';
     document.getElementById('BFS').style.display ='block';
