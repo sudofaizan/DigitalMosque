@@ -1,4 +1,3 @@
-bash
 [Unit]
 Description=MosqueDaemon
 After=network.target
