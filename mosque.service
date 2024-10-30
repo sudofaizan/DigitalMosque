@@ -1,0 +1,11 @@
+bash
+[Unit]
+Description=MosqueDaemon
+After=network.target
+
+[Service]
+ExecStart=/home/ec2-user/DigitalMosque/auto.sh
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
