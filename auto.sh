@@ -1,5 +1,4 @@
 #!/bin/bash
-
 # Define paths for reusability
 SERVICE_PATH="/etc/systemd/system/mosque.service"
 SERVICE_NAME="mosque"
@@ -19,6 +18,8 @@ fi
 
 # Pull latest code and check for changes
 cd "$LOCAL_DIR"
+git stash
+
 if git pull | grep -q "changed"; then
     # Remove all running containers
     docker rm -f $(docker ps -aq)
