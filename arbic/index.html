@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn Arabic</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Learn Arabic</h1>
+        <nav>
+            <ul>
+                <li><a href="#lessons">Lessons</a></li>
+                <li><a href="#flashcards">Flashcards</a></li>
+                <li><a href="#quiz">Quiz</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Lessons Section -->
+        <section id="lessons">
+            <h2>Arabic Lessons</h2>
+            <div class="lesson">
+                <h3>Lesson 1: Arabic Alphabet</h3>
+                <p>Learn the basic Arabic alphabet.</p>
+                <button onclick="playAudio('audio/arabic-alphabet.mp3')">Play Pronunciation</button>
+            </div>
+            <div class="lesson">
+                <h3>Lesson 2: Basic Phrases</h3>
+                <p>Learn common Arabic greetings and phrases.</p>
+                <button onclick="playAudio('audio/basic-phrases.mp3')">Play Pronunciation</button>
+            </div>
+        </section>
+
+        <!-- Flashcards Section -->
+        <section id="flashcards">
+            <h2>Flashcards</h2>
+            <div class="flashcard">
+                <p>What is "Hello" in Arabic?</p>
+                <button onclick="showAnswer(this)">Show Answer</button>
+                <p class="answer">Assalamu Alaikum</p>
+            </div>
+        </section>
+
+        <!-- Quiz Section -->
+        <section id="quiz">
+            <h2>Arabic Quiz</h2>
+            <p>How do you say "Goodbye" in Arabic?</p>
+            <input type="text" id="quiz-answer" placeholder="Enter your answer">
+            <button onclick="checkAnswer()">Submit</button>
+            <p id="quiz-result"></p>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

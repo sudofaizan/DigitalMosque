@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DigitalMosque</title>
+        <link rel="stylesheet" href="style-hidden.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia&effect=neon|outline|emboss|shadow-multiple">
+
+        <center><h1>Digital Mosque</h1>
+</head>
+<body>
+    <div class="video-wrapper">
+        <div class="video-container">
+            <video id="myVideo">
+                <source src="src/wuduh.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+        <div class="custom-controls">
+            <button id="start" onclick="startVideo()">Start</button>
+            <button  id="stop" onclick="stopVideo()">Stop</button>
+            <button onclick="replayVideo()">Replay</button>
+            <button onclick="toggleFullScreen()">Fullscreen</button>
+        </div>
+    </div>
+
+    <script src="waduh.js"></script>
+
+</body>
+</html>
