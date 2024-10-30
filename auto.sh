@@ -34,4 +34,4 @@ else
 fi
 
 # Delay before re-checking
-sleep 5
+sleep 600
