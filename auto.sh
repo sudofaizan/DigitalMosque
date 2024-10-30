@@ -1,9 +1,13 @@
+if ls /etc/systemd/system/mosque.service
+then
+echo "daemon present"
+else
 cd /home/ec2-user/DigitalMosque
 cp mosque.service /etc/systemd/system/mosque.service
 sudo systemctl daemon-reload
 sudo systemctl start mosque
 sudo systemctl enable mosque
-
+fi
 if git pull |grep changed
 then
 docker rm -f $(docker ps -aq)
