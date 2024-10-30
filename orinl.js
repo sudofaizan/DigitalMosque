@@ -210,16 +210,32 @@ document.getElementById('stepname').textContent = `Current Step Name is: Sajjadh
                               image.src = "src/steps/4.png";
 document.getElementById('stepname').textContent = `Current Step Name is: Tashahhud`;
                                             }
+                                            if (cur_time > 147)
+                                              {
+                                                image.src = "src/steps/5.png";
+                document.getElementById('stepname').textContent = `Current Step Name is: Sajjadh`;//
+                                                                }
                             if (cur_time > 152)
                               {
                                 image.src = "src/steps/4.png";
 document.getElementById('stepname').textContent = `Current Step Name is: Tashahhud`;
                                                 }
-                              if (cur_time > 216)
+                              if (cur_time > 172)
                                 {
-                                  image.src = "src/steps/3.png";
-document.getElementById('stepname').textContent = `Current Step Name is: Qiyaam`;
+                                  image.src = "src/steps/1.png";
+document.getElementById('stepname').textContent = `Current Step Name is: AL-Qiyaam`;
                                                     }
+                                                    if (cur_time > 208)
+                                                      {
+                                                        image.src = "src/steps/2.png";
+                      document.getElementById('stepname').textContent = `Current Step Name is: RuKu`;
+                                                                          }
+                                                                          if (cur_time > 217)
+                                                                            {
+                                                                              image.src = "src/steps/3.png";
+                                            document.getElementById('stepname').textContent = `Current Step Name is: Qiyaam`;
+                                                                                                }
+
                                 if (cur_time > 221)
                                   {
                                     image.src = "src/steps/5.png";
