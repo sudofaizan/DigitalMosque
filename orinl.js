@@ -132,6 +132,10 @@ document.getElementById('stepname').textContent = `Current Step Name is: Qiyaam`
     document.getElementById('AFS').style.display ="none";
     document.getElementById('AFN').style.display ="none";
     document.getElementById('AFW').style.display ="none";
+    document.getElementById('LearnArabic').style.display ="none";
+    document.getElementById('UrduTrans').style.display ="none";
+    document.getElementById('Dream').style.display ="none";
+
     document.getElementById('stepname').style.display ='none'; // hide inline block
 
     
@@ -709,6 +713,10 @@ document.getElementById('stepname').textContent = `Current Step Name is: Takbeer
     document.getElementById('F').style.display ='block';
     document.getElementById('AFS').style.display ='block';
     document.getElementById('AFN').style.display='block';
+    document.getElementById('LearnArabic').style.display ="block";
+    document.getElementById('UrduTrans').style.display ="block";
+    document.getElementById('Dream').style.display ="block";
+
     document.getElementById('AFW').style.display ='block';
     document.getElementById('stepname').style.display ='none'; // hide inline block
     document.getElementById('stepname').textContent = ` `;
