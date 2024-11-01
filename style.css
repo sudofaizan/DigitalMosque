@@ -85,7 +85,10 @@ header {
 .container {
     margin-top: 100px;
 }
-
+h2 {
+    font-family: 'Courier New', Courier, monospace;
+    color: #daa520;
+}
 h1 {
 font-size: 4em;
         margin-bottom: 20px;
@@ -94,14 +97,14 @@ font-size: 4em;
     /* font-size: 30px; */
     text-shadow: 3px 3px 3px #ababab;
 
-    color: goldenrod;
+    color: #daa520;
     @media (max-width: 768px) {
         font-size: 2.5em;
         margin-bottom: 20px;
         font-family: "Sofia", sans-serif;
         /* font-size: 30px; */
         text-shadow: 3px 3px 3px #ababab;
-        color: goldenrod;
+        color: hsl(43, 74%, 49%);
     }
 }
 

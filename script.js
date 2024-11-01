@@ -1,1 +1,781 @@
-const _0x43da9a=_0x4b12;(function(_0x5cdeed,_0x47457a){const _0x5c4699=_0x4b12,_0x52eb41=_0x5cdeed();while(!![]){try{const _0x450de3=parseInt(_0x5c4699(0x14c))/0x1+parseInt(_0x5c4699(0x145))/0x2+parseInt(_0x5c4699(0x13e))/0x3+-parseInt(_0x5c4699(0x140))/0x4+-parseInt(_0x5c4699(0x14b))/0x5*(-parseInt(_0x5c4699(0x175))/0x6)+parseInt(_0x5c4699(0x152))/0x7+-parseInt(_0x5c4699(0x148))/0x8;if(_0x450de3===_0x47457a)break;else _0x52eb41['push'](_0x52eb41['shift']());}catch(_0x3506e8){_0x52eb41['push'](_0x52eb41['shift']());}}}(_0x467f,0x9e08a));let currentAudio=null,azhanAudio=new Audio(_0x43da9a(0x177)),fajrAudio=new Audio(_0x43da9a(0x135)),dhuhrAudio=new Audio(_0x43da9a(0x178)),asarAudio=new Audio(_0x43da9a(0x13f)),magreebAudio=new Audio(_0x43da9a(0x163)),ishaAudio=new Audio(_0x43da9a(0x17c));const imagesToPreload=['src/steps/0.png','src/steps/1.png',_0x43da9a(0x151),_0x43da9a(0x16c),_0x43da9a(0x153),'src/steps/5.png',_0x43da9a(0x173),'src/steps/7.png'];function _0x4b12(_0x57bd6a,_0x2e7199){const _0x467f20=_0x467f();return _0x4b12=function(_0x4b12e0,_0x49380f){_0x4b12e0=_0x4b12e0-0x135;let _0x2bae35=_0x467f20[_0x4b12e0];return _0x2bae35;},_0x4b12(_0x57bd6a,_0x2e7199);}imagesToPreload[_0x43da9a(0x176)](_0x241084=>{const _0x5c87c1=_0x43da9a,_0x58e10f=new Image();_0x58e10f[_0x5c87c1(0x15c)]=_0x241084;});let azhanPlaying=![],azhanStoppedManually=![],audioEnabled=![];function enableAudio(){const _0x5c91b6=_0x43da9a;audioEnabled=!![],document[_0x5c91b6(0x17b)](_0x5c91b6(0x15f))[_0x5c91b6(0x15a)][_0x5c91b6(0x179)]=_0x5c91b6(0x162);}function getCurrentPrayerTime(){const _0x2fcb5d=_0x43da9a,_0x5ecee7=new Date(),_0x18bf4b=_0x5ecee7['getHours'](),_0x5dab35=_0x5ecee7[_0x2fcb5d(0x157)]();let _0x1c9fc2='';const _0x278a78=document[_0x2fcb5d(0x17b)](_0x2fcb5d(0x165));(_0x1c9fc2='\x20')&&(_0x1c9fc2='NO\x20TIME',document[_0x2fcb5d(0x17b)](_0x2fcb5d(0x165))['style'][_0x2fcb5d(0x179)]=_0x2fcb5d(0x162),document[_0x2fcb5d(0x17b)](_0x2fcb5d(0x165))[_0x2fcb5d(0x15a)]['display']=_0x2fcb5d(0x162),F='0',BFS='0',AFS='0',AFN='0',AFW='0');if(audioEnabled&&_0x18bf4b===0x4&&_0x5dab35===0x2d&&!azhanPlaying&&!azhanStoppedManually)playAzhan();else{if(_0x18bf4b>=0x5&&_0x18bf4b<0xb)_0x1c9fc2=_0x2fcb5d(0x172),F='2',BFS='2',AFS='0',AFN='0',AFW='0',currentAudio=fajrAudio,_0x278a78[_0x2fcb5d(0x15a)][_0x2fcb5d(0x179)]=_0x2fcb5d(0x141);else{if(audioEnabled&&_0x18bf4b===0xc&&_0x5dab35===0x2d&&!azhanPlaying&&!azhanStoppedManually)playAzhan();else{if(_0x18bf4b>=0xc&&_0x18bf4b<0x10)_0x1c9fc2='Dhuhr',F='4',BFS='4',AFS='2',AFN='2',AFW='0',currentAudio=dhuhrAudio,_0x278a78[_0x2fcb5d(0x15a)]['display']=_0x2fcb5d(0x141);else{if(audioEnabled&&_0x18bf4b===0x10&&_0x5dab35===0x2d&&!azhanPlaying&&!azhanStoppedManually)playAzhan();else{if(_0x18bf4b>=0x10&&_0x18bf4b<0x12)_0x1c9fc2=_0x2fcb5d(0x14d),F='4',BFS='4',AFS='0',AFN='0',AFW='0',currentAudio=asarAudio,_0x278a78['style']['display']=_0x2fcb5d(0x141);else{if(audioEnabled&&_0x18bf4b===0x12&&_0x5dab35===0x2d&&!azhanPlaying&&!azhanStoppedManually)playAzhan();else{if(_0x18bf4b>=0x12&&_0x18bf4b<0x14)_0x1c9fc2=_0x2fcb5d(0x154),Sunnat='2',Nafal='2',Farad='3',F='3',BFS='0',AFS='2',AFN='0',AFW='0',currentAudio=magreebAudio,_0x278a78[_0x2fcb5d(0x15a)]['display']=_0x2fcb5d(0x141);else{if(audioEnabled&&_0x18bf4b===0x14&&_0x5dab35===0x2d&&!azhanPlaying&&!azhanStoppedManually)playAzhan();else{if(_0x18bf4b>=0x14&&_0x18bf4b<0x18)_0x1c9fc2=_0x2fcb5d(0x166),Sunnat='4',Nafal='4',Farad='4',F='4',BFS='4',AFS='2',AFN='2',AFW='3\x20Witr',currentAudio=ishaAudio,_0x278a78['style'][_0x2fcb5d(0x179)]='inline-block';else _0x18bf4b>=0x0&&_0x18bf4b<0x4&&(_0x1c9fc2=_0x2fcb5d(0x164),_0x278a78[_0x2fcb5d(0x15a)][_0x2fcb5d(0x179)]=_0x2fcb5d(0x162));}}}}}}}}}document[_0x2fcb5d(0x17b)](_0x2fcb5d(0x17d))[_0x2fcb5d(0x14a)]=_0x2fcb5d(0x139)+_0x1c9fc2,document[_0x2fcb5d(0x17b)](_0x2fcb5d(0x156))[_0x2fcb5d(0x14a)]=_0x2fcb5d(0x147)+BFS,document[_0x2fcb5d(0x17b)]('F')[_0x2fcb5d(0x14a)]=_0x2fcb5d(0x138)+F,document[_0x2fcb5d(0x17b)](_0x2fcb5d(0x13b))['textContent']=_0x2fcb5d(0x167)+AFS,document[_0x2fcb5d(0x17b)](_0x2fcb5d(0x142))[_0x2fcb5d(0x14a)]=_0x2fcb5d(0x13d)+AFN,document['getElementById']('AFW')['textContent']=_0x2fcb5d(0x15e)+AFW;}function updateCurrentTime(){const _0x4668e5=_0x43da9a,_0x2f4fbf=new Date();document[_0x4668e5(0x17b)]('currentTime')[_0x4668e5(0x14a)]=_0x4668e5(0x159)+_0x2f4fbf[_0x4668e5(0x160)]();}function imgupdstrt(){const _0x404b21=_0x43da9a,_0xb89045=document[_0x404b21(0x17b)](_0x404b21(0x144));_0xb89045[_0x404b21(0x15c)]='src/steps/3.png',document[_0x404b21(0x17b)](_0x404b21(0x16b))[_0x404b21(0x14a)]=_0x404b21(0x137),_0xb89045[_0x404b21(0x15a)][_0x404b21(0x179)]=_0x404b21(0x141),document['getElementById']('BFS')['style'][_0x404b21(0x179)]=_0x404b21(0x162),document[_0x404b21(0x17b)]('F')[_0x404b21(0x15a)]['display']=_0x404b21(0x162),document[_0x404b21(0x17b)](_0x404b21(0x13b))[_0x404b21(0x15a)][_0x404b21(0x179)]='none',document[_0x404b21(0x17b)](_0x404b21(0x142))[_0x404b21(0x15a)][_0x404b21(0x179)]=_0x404b21(0x162),document[_0x404b21(0x17b)](_0x404b21(0x16d))[_0x404b21(0x15a)]['display']=_0x404b21(0x162),document[_0x404b21(0x17b)]('stepname')[_0x404b21(0x15a)][_0x404b21(0x179)]='none',setInterval(()=>{const _0x1bf89a=_0x404b21;var _0x3bdd50=currentAudio['currentTime'];if(prayer=_0x1bf89a(0x166))document[_0x1bf89a(0x17b)](_0x1bf89a(0x16b))[_0x1bf89a(0x15a)]['display']=_0x1bf89a(0x141),_0x3bdd50>0x5&&(_0xb89045['src']=_0x1bf89a(0x17a),document['getElementById']('stepname')[_0x1bf89a(0x14a)]=_0x1bf89a(0x169)),_0x3bdd50>0x7&&(_0xb89045[_0x1bf89a(0x15c)]=_0x1bf89a(0x14e),document['getElementById'](_0x1bf89a(0x16b))[_0x1bf89a(0x14a)]=_0x1bf89a(0x16a)),_0x3bdd50>0x32&&(_0xb89045[_0x1bf89a(0x15c)]='src/steps/2.png',document[_0x1bf89a(0x17b)](_0x1bf89a(0x16b))[_0x1bf89a(0x14a)]=_0x1bf89a(0x168)),_0x3bdd50>0x3a&&(_0xb89045[_0x1bf89a(0x15c)]='src/steps/3.png',document[_0x1bf89a(0x17b)]('stepname')[_0x1bf89a(0x14a)]=_0x1bf89a(0x137)),_0x3bdd50>0x40&&(_0xb89045[_0x1bf89a(0x15c)]=_0x1bf89a(0x15b),document[_0x1bf89a(0x17b)](_0x1bf89a(0x16b))[_0x1bf89a(0x14a)]='Current\x20Step\x20Name\x20is:\x20Sajjadh'),_0x3bdd50>0x46&&(_0xb89045[_0x1bf89a(0x15c)]=_0x1bf89a(0x153),document[_0x1bf89a(0x17b)](_0x1bf89a(0x16b))[_0x1bf89a(0x14a)]=_0x1bf89a(0x15d)),_0x3bdd50>0x4a&&(_0xb89045[_0x1bf89a(0x15c)]=_0x1bf89a(0x15b),document[_0x1bf89a(0x17b)]('stepname')[_0x1bf89a(0x14a)]=_0x1bf89a(0x13a)),_0x3bdd50>0x4a&&(_0xb89045['src']=_0x1bf89a(0x15b),document[_0x1bf89a(0x17b)](_0x1bf89a(0x16b))['textContent']=_0x1bf89a(0x13a)),_0x3bdd50>0x50&&(_0xb89045[_0x1bf89a(0x15c)]=_0x1bf89a(0x14e),document[_0x1bf89a(0x17b)]('stepname')['textContent']=_0x1bf89a(0x16a)),_0x3bdd50>0x7d&&(_0xb89045[_0x1bf89a(0x15c)]='src/steps/2.png',document['getElementById'](_0x1bf89a(0x16b))['textContent']='Current\x20Step\x20Name\x20is:\x20Ruku'),_0x3bdd50>0x84&&(_0xb89045[_0x1bf89a(0x15c)]=_0x1bf89a(0x16c),document['getElementById'](_0x1bf89a(0x16b))[_0x1bf89a(0x14a)]=_0x1bf89a(0x137)),_0x3bdd50>0x88&&(_0xb89045['src']=_0x1bf89a(0x15b),document[_0x1bf89a(0x17b)](_0x1bf89a(0x16b))[_0x1bf89a(0x14a)]=_0x1bf89a(0x13a)),_0x3bdd50>0x8e&&(_0xb89045['src']='src/steps/4.png',document[_0x1bf89a(0x17b)](_0x1bf89a(0x16b))[_0x1bf89a(0x14a)]='Current\x20Step\x20Name\x20is:\x20Tashahhud'),_0x3bdd50>0x93&&(_0xb89045[_0x1bf89a(0x15c)]=_0x1bf89a(0x15b),document[_0x1bf89a(0x17b)](_0x1bf89a(0x16b))[_0x1bf89a(0x14a)]=_0x1bf89a(0x13a)),_0x3bdd50>0x98&&(_0xb89045[_0x1bf89a(0x15c)]=_0x1bf89a(0x153),document[_0x1bf89a(0x17b)](_0x1bf89a(0x16b))[_0x1bf89a(0x14a)]=_0x1bf89a(0x15d)),_0x3bdd50>0xac&&(_0xb89045[_0x1bf89a(0x15c)]='src/steps/1.png',document[_0x1bf89a(0x17b)]('stepname')[_0x1bf89a(0x14a)]='Current\x20Step\x20Name\x20is:\x20AL-Qiyaam'),_0x3bdd50>0xd0&&(_0xb89045[_0x1bf89a(0x15c)]='src/steps/2.png',document[_0x1bf89a(0x17b)](_0x1bf89a(0x16b))['textContent']=_0x1bf89a(0x161)),_0x3bdd50>0xd9&&(_0xb89045[_0x1bf89a(0x15c)]=_0x1bf89a(0x16c),document[_0x1bf89a(0x17b)]('stepname')[_0x1bf89a(0x14a)]=_0x1bf89a(0x137)),_0x3bdd50>0xdd&&(_0xb89045[_0x1bf89a(0x15c)]=_0x1bf89a(0x15b),document[_0x1bf89a(0x17b)](_0x1bf89a(0x16b))['textContent']='Current\x20Step\x20Name\x20is:\x20Sajjadh'),_0x3bdd50>0xe3&&(_0xb89045['src']=_0x1bf89a(0x153),document[_0x1bf89a(0x17b)](_0x1bf89a(0x16b))[_0x1bf89a(0x14a)]=_0x1bf89a(0x15d)),_0x3bdd50>0xe7&&(_0xb89045[_0x1bf89a(0x15c)]=_0x1bf89a(0x15b),document[_0x1bf89a(0x17b)](_0x1bf89a(0x16b))[_0x1bf89a(0x14a)]=_0x1bf89a(0x13a)),_0x3bdd50>0xee&&(_0xb89045[_0x1bf89a(0x15c)]=_0x1bf89a(0x14e),document['getElementById'](_0x1bf89a(0x16b))['textContent']='Current\x20Step\x20Name\x20is:\x20AL-Qiyaam'),_0x3bdd50>0x110&&(_0xb89045[_0x1bf89a(0x15c)]=_0x1bf89a(0x151),document[_0x1bf89a(0x17b)]('stepname')[_0x1bf89a(0x14a)]=_0x1bf89a(0x168)),_0x3bdd50>0x118&&(_0xb89045[_0x1bf89a(0x15c)]='src/steps/3.png',document[_0x1bf89a(0x17b)]('stepname')['textContent']='Current\x20Step\x20Name\x20is:\x20Qiyaam'),_0x3bdd50>0x11c&&(_0xb89045['src']=_0x1bf89a(0x15b),document['getElementById']('stepname')['textContent']=_0x1bf89a(0x13a)),_0x3bdd50>0x122&&(_0xb89045[_0x1bf89a(0x15c)]=_0x1bf89a(0x153),document[_0x1bf89a(0x17b)](_0x1bf89a(0x16b))[_0x1bf89a(0x14a)]=_0x1bf89a(0x15d)),_0x3bdd50>0x127&&(_0xb89045[_0x1bf89a(0x15c)]=_0x1bf89a(0x15b),document[_0x1bf89a(0x17b)](_0x1bf89a(0x16b))['textContent']='Current\x20Step\x20Name\x20is:\x20Sajjadh'),_0x3bdd50>0x12d&&(_0xb89045[_0x1bf89a(0x15c)]=_0x1bf89a(0x153),document[_0x1bf89a(0x17b)]('stepname')[_0x1bf89a(0x14a)]=_0x1bf89a(0x15d)),_0x3bdd50>0x15d&&(_0xb89045[_0x1bf89a(0x15c)]=_0x1bf89a(0x173),document[_0x1bf89a(0x17b)](_0x1bf89a(0x16b))['textContent']=_0x1bf89a(0x171)),_0x3bdd50>0x160&&(_0xb89045[_0x1bf89a(0x15c)]=_0x1bf89a(0x14f));else{if(prayer=_0x1bf89a(0x16e))document[_0x1bf89a(0x17b)](_0x1bf89a(0x16b))[_0x1bf89a(0x15a)][_0x1bf89a(0x179)]=_0x1bf89a(0x141),_0x3bdd50>0x7&&(_0xb89045['src']='src/steps/0.png',document[_0x1bf89a(0x17b)](_0x1bf89a(0x16b))['textContent']=_0x1bf89a(0x169),document[_0x1bf89a(0x17b)](_0x1bf89a(0x16b))[_0x1bf89a(0x14a)]='Current\x20Step\x20Name\x20is:\x20Takbeer'),_0x3bdd50>0x9&&(_0xb89045['src']=_0x1bf89a(0x14e),document[_0x1bf89a(0x17b)](_0x1bf89a(0x16b))[_0x1bf89a(0x14a)]=_0x1bf89a(0x16a)),_0x3bdd50>0x43&&(_0xb89045['src']=_0x1bf89a(0x151),document['getElementById'](_0x1bf89a(0x16b))[_0x1bf89a(0x14a)]='Current\x20Step\x20Name\x20is:\x20Ruku'),_0x3bdd50>0x4c&&(_0xb89045['src']='src/steps/3.png',document['getElementById']('stepname')[_0x1bf89a(0x14a)]='Current\x20Step\x20Name\x20is:\x20Qiyaam'),_0x3bdd50>0x52&&(_0xb89045['src']=_0x1bf89a(0x15b),document[_0x1bf89a(0x17b)](_0x1bf89a(0x16b))[_0x1bf89a(0x14a)]='Current\x20Step\x20Name\x20is:\x20Sajjadh'),_0x3bdd50>0x5b&&(_0xb89045[_0x1bf89a(0x15c)]=_0x1bf89a(0x153),document['getElementById'](_0x1bf89a(0x16b))[_0x1bf89a(0x14a)]=_0x1bf89a(0x15d)),_0x3bdd50>0x61&&(_0xb89045[_0x1bf89a(0x15c)]=_0x1bf89a(0x15b),document['getElementById'](_0x1bf89a(0x16b))['textContent']=_0x1bf89a(0x13a)),_0x3bdd50>0x6a&&(_0xb89045[_0x1bf89a(0x15c)]=_0x1bf89a(0x14e),document['getElementById'](_0x1bf89a(0x16b))[_0x1bf89a(0x14a)]=_0x1bf89a(0x16a)),_0x3bdd50>0xa2&&(_0xb89045[_0x1bf89a(0x15c)]=_0x1bf89a(0x151),document[_0x1bf89a(0x17b)]('stepname')[_0x1bf89a(0x14a)]=_0x1bf89a(0x168)),_0x3bdd50>0xac&&(_0xb89045[_0x1bf89a(0x15c)]=_0x1bf89a(0x16c),document[_0x1bf89a(0x17b)](_0x1bf89a(0x16b))['textContent']=_0x1bf89a(0x137)),_0x3bdd50>0xb1&&(_0xb89045['src']='src/steps/5.png',document[_0x1bf89a(0x17b)](_0x1bf89a(0x16b))['textContent']=_0x1bf89a(0x13a)),_0x3bdd50>0xb9&&(_0xb89045[_0x1bf89a(0x15c)]=_0x1bf89a(0x153),document[_0x1bf89a(0x17b)](_0x1bf89a(0x16b))[_0x1bf89a(0x14a)]=_0x1bf89a(0x15d)),_0x3bdd50>0xbf&&(_0xb89045[_0x1bf89a(0x15c)]=_0x1bf89a(0x15b),document[_0x1bf89a(0x17b)](_0x1bf89a(0x16b))[_0x1bf89a(0x14a)]='Current\x20Step\x20Name\x20is:\x20Sajjadh'),_0x3bdd50>0xc7&&(_0xb89045['src']=_0x1bf89a(0x153),document['getElementById']('stepname')[_0x1bf89a(0x14a)]=_0x1bf89a(0x15d)),_0x3bdd50>0xe0&&(_0xb89045[_0x1bf89a(0x15c)]=_0x1bf89a(0x14e),document['getElementById'](_0x1bf89a(0x16b))[_0x1bf89a(0x14a)]=_0x1bf89a(0x16a)),_0x3bdd50>0x10e&&(_0xb89045['src']=_0x1bf89a(0x151),document['getElementById'](_0x1bf89a(0x16b))[_0x1bf89a(0x14a)]=_0x1bf89a(0x168)),_0x3bdd50>0x118&&(_0xb89045['src']=_0x1bf89a(0x16c),document[_0x1bf89a(0x17b)](_0x1bf89a(0x16b))[_0x1bf89a(0x14a)]=_0x1bf89a(0x137)),_0x3bdd50>0x11f&&(_0xb89045[_0x1bf89a(0x15c)]='src/steps/5.png',document[_0x1bf89a(0x17b)](_0x1bf89a(0x16b))['textContent']=_0x1bf89a(0x13a)),_0x3bdd50>0x127&&(_0xb89045[_0x1bf89a(0x15c)]=_0x1bf89a(0x153),document['getElementById'](_0x1bf89a(0x16b))[_0x1bf89a(0x14a)]=_0x1bf89a(0x15d)),_0x3bdd50>0x12c&&(_0xb89045[_0x1bf89a(0x15c)]=_0x1bf89a(0x15b),document[_0x1bf89a(0x17b)](_0x1bf89a(0x16b))[_0x1bf89a(0x14a)]='Current\x20Step\x20Name\x20is:\x20Sajjadh'),_0x3bdd50>0x134&&(_0xb89045[_0x1bf89a(0x15c)]=_0x1bf89a(0x14e),document['getElementById'](_0x1bf89a(0x16b))[_0x1bf89a(0x14a)]=_0x1bf89a(0x16a)),_0x3bdd50>0x161&&(_0xb89045[_0x1bf89a(0x15c)]='src/steps/2.png',document[_0x1bf89a(0x17b)](_0x1bf89a(0x16b))['textContent']=_0x1bf89a(0x168)),_0x3bdd50>0x16b&&(_0xb89045[_0x1bf89a(0x15c)]=_0x1bf89a(0x16c),document['getElementById'](_0x1bf89a(0x16b))['textContent']='Current\x20Step\x20Name\x20is:\x20Qiyaam'),_0x3bdd50>0x170&&(_0xb89045[_0x1bf89a(0x15c)]='src/steps/5.png',document[_0x1bf89a(0x17b)](_0x1bf89a(0x16b))[_0x1bf89a(0x14a)]=_0x1bf89a(0x13a)),_0x3bdd50>0x178&&(_0xb89045[_0x1bf89a(0x15c)]='src/steps/4.png',document['getElementById']('stepname')[_0x1bf89a(0x14a)]='Current\x20Step\x20Name\x20is:\x20Tashahhud'),_0x3bdd50>0x17f&&(_0xb89045[_0x1bf89a(0x15c)]=_0x1bf89a(0x15b),document['getElementById'](_0x1bf89a(0x16b))[_0x1bf89a(0x14a)]='Current\x20Step\x20Name\x20is:\x20Sajjadh'),_0x3bdd50>0x187&&(_0xb89045['src']=_0x1bf89a(0x153),document[_0x1bf89a(0x17b)](_0x1bf89a(0x16b))['textContent']=_0x1bf89a(0x15d)),_0x3bdd50>0x1c4&&(_0xb89045['src']='src/steps/6.png',document['getElementById'](_0x1bf89a(0x16b))[_0x1bf89a(0x14a)]=_0x1bf89a(0x171)),_0x3bdd50>0x1c7&&(_0xb89045[_0x1bf89a(0x15c)]='src/steps/7.png',document['getElementById']('stepname')[_0x1bf89a(0x14a)]=_0x1bf89a(0x171));else(prayer=_0x1bf89a(0x14d))&&(document[_0x1bf89a(0x17b)](_0x1bf89a(0x16b))[_0x1bf89a(0x15a)][_0x1bf89a(0x179)]='inline-block',document[_0x1bf89a(0x17b)](_0x1bf89a(0x16b))['textContent']=_0x3bdd50,_0x3bdd50>0x5&&(_0xb89045[_0x1bf89a(0x15c)]=_0x1bf89a(0x17a),document[_0x1bf89a(0x17b)]('stepname')[_0x1bf89a(0x14a)]=_0x1bf89a(0x169)),_0x3bdd50>0x7&&(_0xb89045[_0x1bf89a(0x15c)]=_0x1bf89a(0x14e),document[_0x1bf89a(0x17b)](_0x1bf89a(0x16b))[_0x1bf89a(0x14a)]='Current\x20Step\x20Name\x20is:\x20AL-Qiyaam'),_0x3bdd50>0x40&&(_0xb89045['src']=_0x1bf89a(0x151),document['getElementById'](_0x1bf89a(0x16b))[_0x1bf89a(0x14a)]=_0x1bf89a(0x168)),_0x3bdd50>0x4b&&(_0xb89045[_0x1bf89a(0x15c)]='src/steps/3.png',document[_0x1bf89a(0x17b)](_0x1bf89a(0x16b))['textContent']=_0x1bf89a(0x137)),_0x3bdd50>0x50&&(_0xb89045['src']=_0x1bf89a(0x15b),document[_0x1bf89a(0x17b)]('stepname')[_0x1bf89a(0x14a)]=_0x1bf89a(0x13a)),_0x3bdd50>0x59&&(_0xb89045['src']='src/steps/4.png',document[_0x1bf89a(0x17b)](_0x1bf89a(0x16b))['textContent']=_0x1bf89a(0x15d)),_0x3bdd50>0x5f&&(_0xb89045[_0x1bf89a(0x15c)]=_0x1bf89a(0x15b),document[_0x1bf89a(0x17b)]('stepname')[_0x1bf89a(0x14a)]=_0x1bf89a(0x13a)),_0x3bdd50>0x66&&(_0xb89045['src']=_0x1bf89a(0x14e),document[_0x1bf89a(0x17b)](_0x1bf89a(0x16b))[_0x1bf89a(0x14a)]='Current\x20Step\x20Name\x20is:\x20AL-Qiyaam'),_0x3bdd50>0x6b&&(_0xb89045['src']=_0x1bf89a(0x14e),document['getElementById'](_0x1bf89a(0x16b))['textContent']='Current\x20Step\x20Name\x20is:\x20AL-Qiyaam'),_0x3bdd50>0xa0&&(_0xb89045[_0x1bf89a(0x15c)]=_0x1bf89a(0x151),document[_0x1bf89a(0x17b)](_0x1bf89a(0x16b))[_0x1bf89a(0x14a)]=_0x1bf89a(0x168)),_0x3bdd50>0xaa&&(_0xb89045['src']='src/steps/3.png',document['getElementById'](_0x1bf89a(0x16b))[_0x1bf89a(0x14a)]='Current\x20Step\x20Name\x20is:\x20Qiyaam'),_0x3bdd50>0xb0&&(_0xb89045[_0x1bf89a(0x15c)]=_0x1bf89a(0x15b),document[_0x1bf89a(0x17b)](_0x1bf89a(0x16b))[_0x1bf89a(0x14a)]=_0x1bf89a(0x13a)),_0x3bdd50>0xb7&&(_0xb89045['src']=_0x1bf89a(0x153),document['getElementById']('stepname')[_0x1bf89a(0x14a)]='Current\x20Step\x20Name\x20is:\x20Tashahhud'),_0x3bdd50>0xbd&&(_0xb89045[_0x1bf89a(0x15c)]='src/steps/5.png',document[_0x1bf89a(0x17b)]('stepname')[_0x1bf89a(0x14a)]='Current\x20Step\x20Name\x20is:\x20Sajjadh'),_0x3bdd50>0xc5&&(_0xb89045[_0x1bf89a(0x15c)]='src/steps/4.png',document[_0x1bf89a(0x17b)](_0x1bf89a(0x16b))[_0x1bf89a(0x14a)]=_0x1bf89a(0x15d)),_0x3bdd50>0xdf&&(_0xb89045[_0x1bf89a(0x15c)]=_0x1bf89a(0x14e),document['getElementById'](_0x1bf89a(0x16b))[_0x1bf89a(0x14a)]=_0x1bf89a(0x16a)),_0x3bdd50>0x10d&&(_0xb89045[_0x1bf89a(0x15c)]=_0x1bf89a(0x151),document[_0x1bf89a(0x17b)](_0x1bf89a(0x16b))[_0x1bf89a(0x14a)]=_0x1bf89a(0x168)),_0x3bdd50>0x116&&(_0xb89045['src']='src/steps/3.png',document[_0x1bf89a(0x17b)](_0x1bf89a(0x16b))[_0x1bf89a(0x14a)]=_0x1bf89a(0x137)),_0x3bdd50>0x11d&&(_0xb89045['src']='src/steps/5.png',document[_0x1bf89a(0x17b)](_0x1bf89a(0x16b))[_0x1bf89a(0x14a)]='Current\x20Step\x20Name\x20is:\x20Sajjadh'),_0x3bdd50>0x124&&(_0xb89045['src']=_0x1bf89a(0x153),document[_0x1bf89a(0x17b)](_0x1bf89a(0x16b))[_0x1bf89a(0x14a)]=_0x1bf89a(0x15d)),_0x3bdd50>0x12a&&(_0xb89045[_0x1bf89a(0x15c)]='src/steps/5.png',document[_0x1bf89a(0x17b)](_0x1bf89a(0x16b))[_0x1bf89a(0x14a)]=_0x1bf89a(0x13a)),_0x3bdd50>0x132&&(_0xb89045[_0x1bf89a(0x15c)]=_0x1bf89a(0x14e),document['getElementById']('stepname')[_0x1bf89a(0x14a)]=_0x1bf89a(0x16a)),_0x3bdd50>0x15e&&(_0xb89045[_0x1bf89a(0x15c)]=_0x1bf89a(0x151),document['getElementById'](_0x1bf89a(0x16b))['textContent']=_0x1bf89a(0x168)),_0x3bdd50>0x169&&(_0xb89045[_0x1bf89a(0x15c)]=_0x1bf89a(0x16c),document['getElementById']('stepname')['textContent']='Current\x20Step\x20Name\x20is:\x20Qiyaam'),_0x3bdd50>0x16f&&(_0xb89045['src']=_0x1bf89a(0x15b),document[_0x1bf89a(0x17b)](_0x1bf89a(0x16b))[_0x1bf89a(0x14a)]=_0x1bf89a(0x13a)),_0x3bdd50>0x176&&(_0xb89045['src']=_0x1bf89a(0x153),document[_0x1bf89a(0x17b)](_0x1bf89a(0x16b))['textContent']='Current\x20Step\x20Name\x20is:\x20Tashahhud'),_0x3bdd50>0x17c&&(_0xb89045[_0x1bf89a(0x15c)]=_0x1bf89a(0x15b),document[_0x1bf89a(0x17b)](_0x1bf89a(0x16b))['textContent']=_0x1bf89a(0x13a)),_0x3bdd50>0x184&&(_0xb89045['src']='src/steps/4.png',document['getElementById']('stepname')[_0x1bf89a(0x14a)]=_0x1bf89a(0x15d)),_0x3bdd50>0x1c2&&(_0xb89045[_0x1bf89a(0x15c)]=_0x1bf89a(0x173),document[_0x1bf89a(0x17b)](_0x1bf89a(0x16b))[_0x1bf89a(0x14a)]=_0x1bf89a(0x171)),_0x3bdd50>0x1c5&&(_0xb89045[_0x1bf89a(0x15c)]=_0x1bf89a(0x14f)));}},0x14);}function _0x467f(){const _0x2bc1c8=['1846360Bwhxwd','paused','Before\x20Fard\x20Sunnah\x20(Rakah)\x20is\x20:','19579728qgVoFv','log','textContent','128435MtlVZp','817537kKsriW','Asar','src/steps/1.png','src/steps/7.png','Start','src/steps/2.png','4770276eTzUYB','src/steps/4.png','Maghrib','pause','BFS','getMinutes','stopAzhanButton','Current\x20Time:\x20','style','src/steps/5.png','src','Current\x20Step\x20Name\x20is:\x20Tashahhud','After\x20Fard\x20Wajib\x20is\x20:','startButton','toLocaleTimeString','Current\x20Step\x20Name\x20is:\x20RuKu','none','4.mp3','No\x20Prayer\x20Time\x20you\x20can\x20pray\x20TahaJudh','toggleButton','Isha','After\x20Fard\x20Sunnah\x20(Rakah)\x20is\x20:','Current\x20Step\x20Name\x20is:\x20Ruku','Current\x20Step\x20Name\x20is:\x20Takbeer','Current\x20Step\x20Name\x20is:\x20AL-Qiyaam','stepname','src/steps/3.png','AFW','Dhuhr','block','addEventListener','Current\x20Step\x20Name\x20is:\x20Salam','Fajr','src/steps/6.png','play','36VgTBUn','forEach','azhan.mp3','2.mp3','display','src/steps/0.png','getElementById','5.mp3','prayerTime','1.mp3','currentTime','Current\x20Step\x20Name\x20is:\x20Qiyaam','Fard\x20(Rakah)\x20is\x20:','Current\x20Prayer:\x20','Current\x20Step\x20Name\x20is:\x20Sajjadh','AFS','catch','After\x20Fard\x20Nafal\x20is\x20:','3215340XkCzKD','3.mp3','2213260bngiGA','inline-block','AFN','Stop','NamazImage'];_0x467f=function(){return _0x2bc1c8;};return _0x467f();}function imgupdstp(){const _0x26668f=_0x43da9a,_0x1909f5=document[_0x26668f(0x17b)](_0x26668f(0x144));_0x1909f5['src']='src/steps/0.png',document[_0x26668f(0x17b)](_0x26668f(0x16b))['textContent']=_0x26668f(0x169),_0x1909f5[_0x26668f(0x15a)][_0x26668f(0x179)]=_0x26668f(0x162),document['getElementById']('prayerTime')[_0x26668f(0x15a)][_0x26668f(0x179)]=_0x26668f(0x16f),document[_0x26668f(0x17b)]('BFS')[_0x26668f(0x15a)][_0x26668f(0x179)]=_0x26668f(0x16f),document[_0x26668f(0x17b)]('F')['style'][_0x26668f(0x179)]=_0x26668f(0x16f),document[_0x26668f(0x17b)](_0x26668f(0x13b))[_0x26668f(0x15a)][_0x26668f(0x179)]=_0x26668f(0x16f),document[_0x26668f(0x17b)](_0x26668f(0x142))[_0x26668f(0x15a)]['display']=_0x26668f(0x16f),document['getElementById']('AFW')['style']['display']=_0x26668f(0x16f),document['getElementById']('stepname')[_0x26668f(0x15a)][_0x26668f(0x179)]='none',document['getElementById']('stepname')[_0x26668f(0x14a)]='\x20';}function togglePrayer(){const _0x192ca9=_0x43da9a,_0x45fe91=document['getElementById'](_0x192ca9(0x165));if(currentAudio&&currentAudio[_0x192ca9(0x146)])currentAudio[_0x192ca9(0x174)](),imgupdstrt(),_0x45fe91[_0x192ca9(0x14a)]=_0x192ca9(0x143),document['getElementById'](_0x192ca9(0x16b))['style']['display']='none';else currentAudio&&(currentAudio[_0x192ca9(0x155)](),currentAudio['currentTime']=0x0,_0x45fe91[_0x192ca9(0x14a)]=_0x192ca9(0x150),imgupdstp(),document[_0x192ca9(0x17b)]('stepname')[_0x192ca9(0x15a)][_0x192ca9(0x179)]=_0x192ca9(0x162));}function playAzhan(){const _0x31f15c=_0x43da9a,_0x16d2a9=document[_0x31f15c(0x17b)](_0x31f15c(0x158));azhanPlaying=!![],azhanStoppedManually=![],azhanAudio['play']()[_0x31f15c(0x13c)](_0x57b556=>{const _0x59493d=_0x31f15c;console[_0x59493d(0x149)]('Error\x20playing\x20audio:',_0x57b556);}),_0x16d2a9[_0x31f15c(0x15a)][_0x31f15c(0x179)]='inline-block',azhanAudio[_0x31f15c(0x170)]('ended',()=>{const _0x34a8a2=_0x31f15c;azhanPlaying=![],_0x16d2a9['style'][_0x34a8a2(0x179)]=_0x34a8a2(0x162);});}function stopAzhan(){const _0x1ccc82=_0x43da9a;azhanAudio[_0x1ccc82(0x155)](),azhanAudio[_0x1ccc82(0x136)]=0x0,azhanPlaying=![],azhanStoppedManually=!![],document[_0x1ccc82(0x17b)](_0x1ccc82(0x158))[_0x1ccc82(0x15a)]['display']=_0x1ccc82(0x162);}function initialize(){updateCurrentTime(),getCurrentPrayerTime(),setInterval(()=>{updateCurrentTime(),getCurrentPrayerTime();},0x3e8);}initialize();
+let currentAudio = null;
+let azhanAudio = new Audio('azhan.mp3');
+let fajrAudio = new Audio('1.mp3');
+let dhuhrAudio = new Audio('2.mp3');
+let asarAudio = new Audio('3.mp3');
+let magreebAudio = new Audio('4.mp3');
+let ishaAudio = new Audio('5.mp3');
+const imagesToPreload = [
+  'src/steps/0.png', 'src/steps/1.png', 'src/steps/2.png', 'src/steps/3.png',
+  'src/steps/4.png', 'src/steps/5.png', 'src/steps/6.png', 'src/steps/7.png'
+];
+
+imagesToPreload.forEach(src => {
+  const img = new Image();
+  img.src = src;
+});
+
+let azhanPlaying = false;
+let azhanStoppedManually = false;
+let audioEnabled = false;
+
+function enableAudio() {
+    audioEnabled = true;
+    document.getElementById('startButton').style.display = 'none';
+}
+
+function getCurrentPrayerTime() {
+    const now = new Date();
+    const hours = now.getHours();
+    const minutes = now.getMinutes();
+    let prayer = '';
+    const toggleButton = document.getElementById('toggleButton');
+if (prayer = " " )
+{
+  prayer = 'NO TIME';
+      document.getElementById('toggleButton').style.display = 'none';
+      document.getElementById('toggleButton').style.display = 'none';
+
+      F = "0"; //fard sunnah
+      BFS = "0"; //before fard sunnah
+      AFS = "0" //after fard sunnah
+      AFN = "0"; //after fard nafal
+      AFW = "0" //after fard wajib
+
+}
+    if (audioEnabled && hours === 4 && minutes === 45 && !azhanPlaying && !azhanStoppedManually) {
+        playAzhan();
+    } else if (hours >= 5 && hours < 11) {
+        prayer = 'Fajr';
+        F = "2"; //fard sunnah
+        BFS = "2"; //before fard sunnah
+        AFS = "0" //after fard sunnah
+        AFN = "0"; //after fard nafal
+        AFW = "0" //after fard wajib
+        currentAudio = fajrAudio;
+        toggleButton.style.display = 'inline-block';
+    } else if (audioEnabled && hours === 12 && minutes === 45 && !azhanPlaying && !azhanStoppedManually) {
+        playAzhan();
+    } else if (hours >= 12 && hours < 16) {
+        prayer = 'Dhuhr';
+        F = "4"; //fard sunnah
+        BFS = "4"; //before fard sunnah
+        AFS = "2" //after fard sunnah
+        AFN = "2"; //after fard nafal
+        AFW = "0" //after fard wajib
+        currentAudio = dhuhrAudio;
+        toggleButton.style.display = 'inline-block';
+    } else if (audioEnabled && hours === 16 && minutes === 45 && !azhanPlaying && !azhanStoppedManually) {
+        playAzhan();
+    } else if (hours >= 16 && hours < 18) {
+        prayer = 'Asar';
+        F = "4"; //fard sunnah
+        BFS = "4"; //before fard sunnah
+        AFS = "0" //after fard sunnah
+        AFN = "0"; //after fard nafal
+        AFW = "0" //after fard wajib
+        currentAudio = asarAudio;
+        toggleButton.style.display = 'inline-block';
+    } else if (audioEnabled && hours === 18 && minutes === 45 && !azhanPlaying && !azhanStoppedManually) {
+        playAzhan();
+    } else if (hours >= 18 && hours < 20) {
+        prayer = 'Maghrib'; 
+        Sunnat = "2";
+        Nafal = "2";
+        Farad = "3";
+        F = "3"; //fard sunnah
+        BFS = "0"; //before fard sunnah
+        AFS = "2" //after fard sunnah
+        AFN = "0"; //after fard nafal
+        AFW = "0" //after fard wajib
+        currentAudio = magreebAudio; 
+        toggleButton.style.display = 'inline-block';
+    } else if (audioEnabled && hours === 20 && minutes === 45 && !azhanPlaying && !azhanStoppedManually) {
+        playAzhan();
+    } else if (hours >= 20 && hours < 24) {
+        prayer = 'Isha';
+        Sunnat = "4";
+        Nafal = "4";
+        Farad = "4";
+        F = "4"; //fard sunnah
+        BFS = "4"; //before fard sunnah
+        AFS = "2" //after fard sunnah
+        AFN = "2"; //after fard nafal
+        AFW = "3 Witr" //after fard wajib
+        currentAudio = ishaAudio;
+        toggleButton.style.display = 'inline-block';
+    } else if (hours >= 0 && hours < 4) {
+        prayer = 'No Prayer Time you can pray TahaJudh';
+        toggleButton.style.display = 'none';
+    }
+
+    document.getElementById('prayerTime').textContent = `Current Prayer: ${prayer}`;
+    document.getElementById('BFS').textContent = `Before Fard Sunnah (Rakah) is :${BFS}`;
+    document.getElementById('F').textContent = `Fard (Rakah) is :${F}`;
+    document.getElementById('AFS').textContent = `After Fard Sunnah (Rakah) is :${AFS}`;
+    document.getElementById('AFN').textContent = `After Fard Nafal is :${AFN}`;
+    document.getElementById('AFW').textContent = `After Fard Wajib is :${AFW}`;
+}
+
+function updateCurrentTime() {
+    const now = new Date();
+    document.getElementById('currentTime').textContent = `Current Time: ${now.toLocaleTimeString()}`;
+}
+function imgupdstrt(){
+    const image = document.getElementById('NamazImage');
+    image.src = "src/steps/3.png";
+document.getElementById('stepname').textContent = `Current Step Name is: Qiyaam`;
+    image.style.display ='inline-block';
+    // document.getElementById('prayerTime').style.display ="none";
+    document.getElementById('BFS').style.display ="none";
+    document.getElementById('F').style.display ="none";
+    document.getElementById('AFS').style.display ="none";
+    document.getElementById('AFN').style.display ="none";
+    document.getElementById('AFW').style.display ="none";
+    document.getElementById('LearnArabic').style.display ="none";
+    document.getElementById('UrduTrans').style.display ="none";
+    document.getElementById('Dream').style.display ="none";
+
+    document.getElementById('stepname').style.display ='none'; // hide inline block
+
+    
+    setInterval(() => {
+   
+
+    var cur_time = currentAudio.currentTime;
+if ( prayer = 'Isha' )
+{/// start of isha 4 rakah
+  document.getElementById('stepname').style.display ='inline-block'; // popup inline block
+  // image.style.display ='none';
+
+  if (cur_time > 5)
+    {
+      image.src = "src/steps/0.png";
+document.getElementById('stepname').textContent = `Current Step Name is: Takbeer`;
+      
+
+    }
+    if (cur_time > 7)
+      {
+        image.src = "src/steps/1.png";
+document.getElementById('stepname').textContent = `Current Step Name is: AL-Qiyaam`;
+
+      }
+      if (cur_time > 50)
+        {
+          image.src = "src/steps/2.png";
+document.getElementById('stepname').textContent = `Current Step Name is: Ruku`;
+
+        }
+        if (cur_time > 58)
+          {
+            image.src = "src/steps/3.png";
+document.getElementById('stepname').textContent = `Current Step Name is: Qiyaam`;
+          }
+          if (cur_time > 64)
+            {
+              image.src = "src/steps/5.png";
+document.getElementById('stepname').textContent = `Current Step Name is: Sajjadh`;
+            }
+            if (cur_time > 70)
+              {
+                image.src = "src/steps/4.png";
+document.getElementById('stepname').textContent = `Current Step Name is: Tashahhud`;
+                }
+              if (cur_time > 74)
+                {
+                  image.src = "src/steps/5.png";
+document.getElementById('stepname').textContent = `Current Step Name is: Sajjadh`;
+                    }
+                if (cur_time > 74)
+                  {
+                    image.src = "src/steps/5.png";
+document.getElementById('stepname').textContent = `Current Step Name is: Sajjadh`;
+                        }
+                  if (cur_time > 80)
+                    {
+                      image.src = "src/steps/1.png";
+document.getElementById('stepname').textContent = `Current Step Name is: AL-Qiyaam`;
+
+                            }
+                    if (cur_time > 125)
+                      {
+                        image.src = "src/steps/2.png";
+document.getElementById('stepname').textContent = `Current Step Name is: Ruku`;
+
+                                }
+                      if (cur_time > 132)
+                        {
+                          image.src = "src/steps/3.png";
+document.getElementById('stepname').textContent = `Current Step Name is: Qiyaam`;
+                                    }
+                        if (cur_time > 136)
+                          {
+                            image.src = "src/steps/5.png";
+document.getElementById('stepname').textContent = `Current Step Name is: Sajjadh`;
+                                        }
+                          if (cur_time > 142)
+                            {
+                              image.src = "src/steps/4.png";
+document.getElementById('stepname').textContent = `Current Step Name is: Tashahhud`;
+                                            }
+                                            if (cur_time > 147)
+                                              {
+                                                image.src = "src/steps/5.png";
+                document.getElementById('stepname').textContent = `Current Step Name is: Sajjadh`;//
+                                                                }
+                            if (cur_time > 152)
+                              {
+                                image.src = "src/steps/4.png";
+document.getElementById('stepname').textContent = `Current Step Name is: Tashahhud`;
+                                                }
+                              if (cur_time > 172)
+                                {
+                                  image.src = "src/steps/1.png";
+document.getElementById('stepname').textContent = `Current Step Name is: AL-Qiyaam`;
+                                                    }
+                                                    if (cur_time > 208)
+                                                      {
+                                                        image.src = "src/steps/2.png";
+                      document.getElementById('stepname').textContent = `Current Step Name is: RuKu`;
+                                                                          }
+                                                                          if (cur_time > 217)
+                                                                            {
+                                                                              image.src = "src/steps/3.png";
+                                            document.getElementById('stepname').textContent = `Current Step Name is: Qiyaam`;
+                                                                                                }
+
+                                if (cur_time > 221)
+                                  {
+                                    image.src = "src/steps/5.png";
+document.getElementById('stepname').textContent = `Current Step Name is: Sajjadh`;
+                                                        }
+                                  if (cur_time > 227)
+                                    {
+                                      image.src = "src/steps/4.png";
+document.getElementById('stepname').textContent = `Current Step Name is: Tashahhud`;
+                                                            }
+                                    if (cur_time > 231)
+                                      {
+                                        image.src = "src/steps/5.png";
+document.getElementById('stepname').textContent = `Current Step Name is: Sajjadh`;
+                                                                }
+                                      if (cur_time > 238)
+                                        {
+                                          image.src = "src/steps/1.png";
+document.getElementById('stepname').textContent = `Current Step Name is: AL-Qiyaam`;
+
+                                                                    }
+                                        if (cur_time > 272)
+                                          {
+                                            image.src = "src/steps/2.png";
+document.getElementById('stepname').textContent = `Current Step Name is: Ruku`;
+
+                                                                        }
+                                          if (cur_time > 280)
+                                            {
+                                              image.src = "src/steps/3.png";
+document.getElementById('stepname').textContent = `Current Step Name is: Qiyaam`;
+                                                                            }
+                                            if (cur_time > 284)
+                                              {
+                                                image.src = "src/steps/5.png";
+document.getElementById('stepname').textContent = `Current Step Name is: Sajjadh`;
+                                                                                }
+                                              if (cur_time > 290)
+                                                {
+                                                  image.src = "src/steps/4.png";
+document.getElementById('stepname').textContent = `Current Step Name is: Tashahhud`;
+                                                                                    }
+                                                if (cur_time > 295)
+                                                  {
+                                                    image.src = "src/steps/5.png";
+document.getElementById('stepname').textContent = `Current Step Name is: Sajjadh`;
+                                                                                        }
+                                                  if (cur_time > 301)
+                                                    {
+                                                      image.src = "src/steps/4.png";
+document.getElementById('stepname').textContent = `Current Step Name is: Tashahhud`;
+                                                                                            }
+                                                    if (cur_time > 349)
+                                                      {
+                                                        image.src = "src/steps/6.png";
+document.getElementById('stepname').textContent = `Current Step Name is: Salam`;
+                                                                                                }
+                                                      if (cur_time > 352)
+                                                        {
+                                                          image.src = "src/steps/7.png";
+                                                                                                    }
+    }
+
+
+else if ( prayer = "Dhuhr" )
+{/// start of zoher 4 rakah
+  document.getElementById('stepname').style.display ='inline-block'; // popup inline block
+  
+
+      if (cur_time > 7)
+      {
+        image.src = "src/steps/0.png";
+document.getElementById('stepname').textContent = `Current Step Name is: Takbeer`;
+        document.getElementById('stepname').textContent = `Current Step Name is: Takbeer`;
+      }
+      if (cur_time > 9)
+        {
+          image.src = "src/steps/1.png";
+
+          document.getElementById('stepname').textContent = `Current Step Name is: AL-Qiyaam`;
+        }
+        if (cur_time > 67)
+            {
+              image.src = "src/steps/2.png";
+
+              document.getElementById('stepname').textContent = `Current Step Name is: Ruku`;
+
+            }
+            if (cur_time > 76)
+                {
+                  image.src = "src/steps/3.png";
+                  document.getElementById('stepname').textContent = `Current Step Name is: Qiyaam`;
+
+                }
+                if (cur_time > 82)
+                    {
+                      image.src = "src/steps/5.png";
+                      document.getElementById('stepname').textContent = `Current Step Name is: Sajjadh`;
+
+                    }
+                    if (cur_time > 91)
+                      {
+                        image.src = "src/steps/4.png";
+                        document.getElementById('stepname').textContent = `Current Step Name is: Tashahhud`;
+
+                      }
+                      if (cur_time > 97)
+                        {
+                          image.src = "src/steps/5.png";
+                          document.getElementById('stepname').textContent = `Current Step Name is: Sajjadh`;
+
+                        }
+                        if (cur_time > 106)
+                          {
+                            image.src = "src/steps/1.png";
+
+                            document.getElementById('stepname').textContent = `Current Step Name is: AL-Qiyaam`;
+
+                          }
+                          if (cur_time > 162)
+                            {
+                              image.src = "src/steps/2.png";
+
+                              document.getElementById('stepname').textContent = `Current Step Name is: Ruku`;
+
+                            }
+                            if (cur_time > 172)
+                              {
+                                image.src = "src/steps/3.png";
+                                document.getElementById('stepname').textContent = `Current Step Name is: Qiyaam`;
+
+                              }
+                              if (cur_time > 177)
+                                {
+                                  image.src = "src/steps/5.png";
+                                  document.getElementById('stepname').textContent = `Current Step Name is: Sajjadh`;
+
+                                }
+                                if (cur_time > 185)
+                                  {
+                                    image.src = "src/steps/4.png";
+                                    document.getElementById('stepname').textContent = `Current Step Name is: Tashahhud`;
+
+                                  }
+                                  if (cur_time > 191)
+                                    {
+                                      image.src = "src/steps/5.png";
+                                      document.getElementById('stepname').textContent = `Current Step Name is: Sajjadh`;
+
+                                    }
+                                    if (cur_time > 199)
+                                      {
+                                        image.src = "src/steps/4.png";
+                                        document.getElementById('stepname').textContent = `Current Step Name is: Tashahhud`;
+
+                                      }
+                                      if (cur_time > 224)
+                                        {
+                                          image.src = "src/steps/1.png";
+ 
+                                          document.getElementById('stepname').textContent = `Current Step Name is: AL-Qiyaam`;
+
+                                        }
+                                        if (cur_time > 270)
+                                          {
+                                            image.src = "src/steps/2.png";
+ 
+                                            document.getElementById('stepname').textContent = `Current Step Name is: Ruku`;
+
+                                          }
+                                          if (cur_time > 280)
+                                            {
+                                              image.src = "src/steps/3.png";
+                                              document.getElementById('stepname').textContent = `Current Step Name is: Qiyaam`;
+
+                                            }
+                                            if (cur_time > 287)
+                                              {
+                                                image.src = "src/steps/5.png";
+                                                document.getElementById('stepname').textContent = `Current Step Name is: Sajjadh`;
+
+                                              }
+                                              if (cur_time > 295)
+                                                {
+                                                  image.src = "src/steps/4.png";
+                                                  document.getElementById('stepname').textContent = `Current Step Name is: Tashahhud`;
+
+                                                }
+                                                if (cur_time > 300)
+                                                  {
+                                                    image.src = "src/steps/5.png";
+                                                    document.getElementById('stepname').textContent = `Current Step Name is: Sajjadh`;
+
+                                                  }
+                                                  if (cur_time > 308)
+                                                    {
+                                                      image.src = "src/steps/1.png";
+ 
+                                                      document.getElementById('stepname').textContent = `Current Step Name is: AL-Qiyaam`;
+
+                                                    }
+                                                    if (cur_time > 353)
+                                                      {
+                                                        image.src = "src/steps/2.png";
+ 
+                                                        document.getElementById('stepname').textContent = `Current Step Name is: Ruku`;
+
+                                                      }
+                                                      if (cur_time > 363)
+                                                        {
+                                                          image.src = "src/steps/3.png";
+                                                          document.getElementById('stepname').textContent = `Current Step Name is: Qiyaam`;
+
+                                                        }
+                                                        if (cur_time > 368)
+                                                          {
+                                                            image.src = "src/steps/5.png";
+                                                            document.getElementById('stepname').textContent = `Current Step Name is: Sajjadh`;
+
+                                                          }
+                                                          if (cur_time > 376)
+                                                            {
+                                                              image.src = "src/steps/4.png";
+
+                                                              document.getElementById('stepname').textContent = `Current Step Name is: Tashahhud`;
+
+                                                            }
+                                                            if (cur_time > 383)
+                                                              {
+                                                                image.src = "src/steps/5.png";
+
+                                                                document.getElementById('stepname').textContent = `Current Step Name is: Sajjadh`;
+
+                                                              }
+                                                              if (cur_time > 391)
+                                                                {
+                                                                  image.src = "src/steps/4.png";
+
+                                                                  document.getElementById('stepname').textContent = `Current Step Name is: Tashahhud`;
+
+                                                                }
+                                                                if (cur_time > 452)
+                                                                  {
+                                                                    image.src = "src/steps/6.png";
+                                                                    document.getElementById('stepname').textContent = `Current Step Name is: Salam`;
+
+                                                                  }
+                                                                  if (cur_time > 455)
+                                                                    {
+                                                                      image.src = "src/steps/7.png"; 
+                                                                      document.getElementById('stepname').textContent = `Current Step Name is: Salam`;
+
+                                                                    }  /// end of zoher 4 rakah
+
+
+}
+
+else if ( prayer = 'Asar' )
+    {/// start of asar 4 rakah
+      document.getElementById('stepname').style.display ='inline-block'; // popup inline block    
+      document.getElementById('stepname').textContent = cur_time;  
+
+          if (cur_time > 5)
+          {
+            image.src = "src/steps/0.png";
+            document.getElementById('stepname').textContent = `Current Step Name is: Takbeer`;
+            
+          }
+
+          if (cur_time > 7)
+            {
+              image.src = "src/steps/1.png";
+              document.getElementById('stepname').textContent = `Current Step Name is: AL-Qiyaam`;
+
+              
+            }
+            if (cur_time > 64)
+                {
+                  image.src = "src/steps/2.png";
+                  document.getElementById('stepname').textContent = `Current Step Name is: Ruku`;
+
+                  
+                }
+                if (cur_time > 75)
+                    {
+                      image.src = "src/steps/3.png";
+                      document.getElementById('stepname').textContent = `Current Step Name is: Qiyaam`;
+                      
+                    }
+                    if (cur_time > 80)
+                        {
+                          image.src = "src/steps/5.png";
+                          document.getElementById('stepname').textContent = `Current Step Name is: Sajjadh`;
+                          
+                        }
+                        if (cur_time > 89)
+                            {
+                              image.src = "src/steps/4.png";
+                              document.getElementById('stepname').textContent = `Current Step Name is: Tashahhud`;
+                              
+                            }
+                            if (cur_time > 95)
+                                {
+                                  image.src = "src/steps/5.png";
+                                  document.getElementById('stepname').textContent = `Current Step Name is: Sajjadh`;
+                                  
+                                }
+                                if (cur_time > 102)
+                                    {
+                                      image.src = "src/steps/1.png";
+                                      document.getElementById('stepname').textContent = `Current Step Name is: AL-Qiyaam`;
+
+                                      
+                                    }
+                                    if (cur_time > 107 )
+                                      {
+                                        image.src = "src/steps/1.png";
+                                        document.getElementById('stepname').textContent = `Current Step Name is: AL-Qiyaam`;
+
+                                        
+                                      }
+                                      if (cur_time > 160 )
+                                        {
+                                          image.src = "src/steps/2.png";
+                                          document.getElementById('stepname').textContent = `Current Step Name is: Ruku`;
+
+                                          
+                                        }
+                                        if (cur_time > 170 )
+                                          {
+                                            image.src = "src/steps/3.png";
+                                            document.getElementById('stepname').textContent = `Current Step Name is: Qiyaam`;
+                                            
+                                          }
+                                          if (cur_time > 176 )
+                                            {
+                                              image.src = "src/steps/5.png";
+                                              document.getElementById('stepname').textContent = `Current Step Name is: Sajjadh`;
+                                              
+                                            }
+                                            if (cur_time > 183 )
+                                              {
+                                                image.src = "src/steps/4.png";
+                                                document.getElementById('stepname').textContent = `Current Step Name is: Tashahhud`;
+                                                
+                                              }
+                                              if (cur_time > 189 )
+                                                {
+                                                  image.src = "src/steps/5.png";
+                                                  document.getElementById('stepname').textContent = `Current Step Name is: Sajjadh`;
+                                                  
+                                                }
+                                                if (cur_time > 197 )
+                                                  {
+                                                    image.src = "src/steps/4.png";
+                                                    document.getElementById('stepname').textContent = `Current Step Name is: Tashahhud`;
+                                                    
+                                                  }
+                                                  if (cur_time > 223 )
+                                                    {
+                                                      image.src = "src/steps/1.png";
+                                                      document.getElementById('stepname').textContent = `Current Step Name is: AL-Qiyaam`;
+
+                                                      
+                                                    }
+                                                    if (cur_time > 269 )
+                                                      {
+                                                        image.src = "src/steps/2.png";
+                                                        document.getElementById('stepname').textContent = `Current Step Name is: Ruku`;
+
+                                                        
+                                                      }
+                                                      if (cur_time > 278 )
+                                                        {
+                                                          image.src = "src/steps/3.png";
+                                                          document.getElementById('stepname').textContent = `Current Step Name is: Qiyaam`;
+                                                          
+                                                        }
+                                                        if (cur_time > 285 )
+                                                          {
+                                                            image.src = "src/steps/5.png";
+                                                            document.getElementById('stepname').textContent = `Current Step Name is: Sajjadh`;
+                                                            
+                                                          }
+                                                          if (cur_time > 292)
+                                                            {
+                                                              image.src = "src/steps/4.png";
+                                                              document.getElementById('stepname').textContent = `Current Step Name is: Tashahhud`;
+                                                              
+                                                            }
+                                                            if (cur_time > 298 )
+                                                              {
+                                                                image.src = "src/steps/5.png";
+                                                                document.getElementById('stepname').textContent = `Current Step Name is: Sajjadh`;
+                                                                
+                                                              }
+                                                              if (cur_time > 306 )
+                                                                {
+                                                                  image.src = "src/steps/1.png";
+                                                                  document.getElementById('stepname').textContent = `Current Step Name is: AL-Qiyaam`;
+
+                                                                  
+                                                                }
+                                                                if (cur_time > 350 )
+                                                                  {
+                                                                    image.src = "src/steps/2.png";
+                                                                    document.getElementById('stepname').textContent = `Current Step Name is: Ruku`;
+
+                                                                    
+                                                                  }
+                                                                  if (cur_time > 361 )
+                                                                    {
+                                                                      image.src = "src/steps/3.png";
+                                                                      document.getElementById('stepname').textContent = `Current Step Name is: Qiyaam`;
+                                                                      
+                                                                    }
+                                                                    if (cur_time > 367 )
+                                                                      {
+                                                                        image.src = "src/steps/5.png";
+                                                                        document.getElementById('stepname').textContent = `Current Step Name is: Sajjadh`;
+                                                                        
+                                                                      }
+                                                                      if (cur_time > 374 )
+                                                                        {
+                                                                          image.src = "src/steps/4.png";
+                                                                          document.getElementById('stepname').textContent = `Current Step Name is: Tashahhud`;
+                                                                          
+                                                                        }
+                                                                        if (cur_time > 380 )
+                                                                          {
+                                                                            image.src = "src/steps/5.png";
+                                                                            document.getElementById('stepname').textContent = `Current Step Name is: Sajjadh`;
+                                                                            
+                                                                          }
+                                                                          if (cur_time > 388 )
+                                                                            {
+                                                                              image.src = "src/steps/4.png";
+                                                                              document.getElementById('stepname').textContent = `Current Step Name is: Tashahhud`;
+                                                                              
+                                                                            }
+                                                                            if (cur_time > 450 )
+                                                                              {
+                                                                                image.src = "src/steps/6.png";
+                                                                                document.getElementById('stepname').textContent = `Current Step Name is: Salam`;
+                                                                                
+                                                                              }
+                                                                              if (cur_time > 453 )
+                                                                                {
+                                                                                  image.src = "src/steps/7.png";
+                                                                                  
+                                                                                }
+        }//asar end
+
+
+
+    }, 20); // Update every second
+
+}
+function imgupdstp(){
+    const image = document.getElementById('NamazImage');
+    image.src = "src/steps/0.png";
+document.getElementById('stepname').textContent = `Current Step Name is: Takbeer`;
+    image.style.display ='none'; 
+    document.getElementById('prayerTime').style.display ='block';
+    document.getElementById('BFS').style.display ='block';
+    document.getElementById('F').style.display ='block';
+    document.getElementById('AFS').style.display ='block';
+    document.getElementById('AFN').style.display='block';
+    document.getElementById('LearnArabic').style.display ="block";
+    document.getElementById('UrduTrans').style.display ="block";
+    document.getElementById('Dream').style.display ="block";
+
+    document.getElementById('AFW').style.display ='block';
+    document.getElementById('stepname').style.display ='none'; // hide inline block
+    document.getElementById('stepname').textContent = ` `;
+
+}
+function togglePrayer() {
+    const button = document.getElementById('toggleButton');
+    if (currentAudio && currentAudio.paused) {
+        currentAudio.play();
+        imgupdstrt();
+        button.textContent = 'Stop';
+        document.getElementById('stepname').style.display ='none'; // hide inline block
+
+
+    } else if (currentAudio) {
+        currentAudio.pause();
+        currentAudio.currentTime = 0;
+        button.textContent = 'Start';
+        imgupdstp();
+        document.getElementById('stepname').style.display ='none'; // hide inline block
+
+        
+        
+    }
+    
+
+}
+
+function playAzhan() {
+    const stopAzhanButton = document.getElementById('stopAzhanButton');
+
+    azhanPlaying = true;
+    azhanStoppedManually = false;
+    azhanAudio.play().catch(error => {
+        console.log('Error playing audio:', error);
+    });
+    stopAzhanButton.style.display = 'inline-block'; // Show the Stop Azan button
+
+    azhanAudio.addEventListener('ended', () => {
+        azhanPlaying = false;
+        stopAzhanButton.style.display = 'none'; // Hide the Stop Azan button when Azan ends
+    });
+}
+
+function stopAzhan() {
+    azhanAudio.pause();
+    azhanAudio.currentTime = 0;
+    azhanPlaying = false;
+    azhanStoppedManually = true;
+    document.getElementById('stopAzhanButton').style.display = 'none'; // Hide the Stop Azan button
+}
+
+function initialize() {
+    updateCurrentTime();
+    getCurrentPrayerTime();
+    setInterval(() => {
+        updateCurrentTime();
+        getCurrentPrayerTime();  // Check for prayer times every second
+    }, 1000); // Update every second
+}
+
+initialize();
