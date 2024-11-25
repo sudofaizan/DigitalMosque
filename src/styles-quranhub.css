@@ -1,0 +1,155 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    /* background-color: #f9f9f9; */
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('aqsa.webp'); /* Replace with your laptop/tablet image */
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 100vh;
+  }
+  footer {
+    background-color: goldenrod;
+    border-top: 2px solid #EAEAEA;
+    color: rgb(244, 236, 215);
+    padding:8px;
+    text-align: center;
+}
+  h1 {
+    font-size: 2em;
+            margin-bottom: 20px;
+        font-family: "Sofia", sans-serif;
+                    color: hsl(44deg 25.94% 20.22%);
+
+        /* font-size: 30px; */
+        text-shadow: -7px 8px 3px #00000082;
+    
+        color: hsl(43, 44%, 23%);
+        @media (max-width: 768px) {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+
+            font-family: "Sofia", sans-serif;
+            /* font-size: 30px; */
+            text-shadow: -7px 8px 3px #00000082;
+            color: hsl(44deg 25.94% 20.22%)
+        }
+    }
+  .app-container {
+    width: 1300px;
+    height: 800px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Header Styles */
+  .header {
+    background-color: #daa520;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Scrollable List */
+  .scrollable-list {
+    flex: 1;
+    overflow-y: auto;
+  }
+  
+  .surah-list {
+    list-style-type: none;
+    margin: 0;
+    color: #000000;
+    padding: 0;
+  }
+  
+  .surah-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    border-bottom: 1px solid #ddd;
+    transition: background-color 0.3s;
+  }
+  
+  .surah-list li:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .surah-list li span {
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  
+  /* Status Bar */
+  .status-bar {
+    background-color: #daa5208e;
+    border-top: 1px solid #ddd;
+    font-family: 'Courier New', Courier, monospace;
+    color: #000000;
+    font-size: large;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .status-info {
+    font-size: 0.9rem;
+    text-align: center;
+    margin-bottom: 5px;
+  }
+  
+  .progress-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .progress-bar {
+    width: 90%;
+    margin: 5px 0;
+  }
+  
+  .time {
+    width: 90%;
+    color: #584004;
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+  }
+  
+  .controls {
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+  }
+  
+  .control-button {
+    background-color: #daa520;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+  }
+  
+  .control-button:hover {
+    background-color: #af8926;
+  }
