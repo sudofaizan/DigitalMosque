@@ -15,7 +15,7 @@ const surahs = [
   { id: "003", name: "Aal-E-Imran", duration: "45:59" },
   { id: "004", name: "An-Nisa", duration: "53:45" },
   { id: "005", name: "Al-Ma-idah", duration: "39:19" },
-  { id: "006 ", name: "Al-Anaam", duration: "42:45" },
+  { id: "006", name: "Al-Anaam", duration: "42:45" },
   { id: "007", name: "Al-Araf", duration: "48:59" },
   { id: "008", name: "Al-Anfal", duration: "19:16" },
   { id: "009", name: "At-Tawba", duration: "33:25" },
