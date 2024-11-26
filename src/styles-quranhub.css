@@ -133,6 +133,8 @@ body {
     justify-content: space-between;
     font-size: 0.8rem;
   }
+  html { height: 100vh; }
+body { height: 100%; }
   
   .controls {
     display: flex;
