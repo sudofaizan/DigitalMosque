@@ -43,6 +43,7 @@ body {
   .app-container {
     width: 1300px;
     height: 800px;
+    
     background: #fff;
     border: 1px solid #ddd;
     border-radius: 10px;
@@ -50,6 +51,11 @@ body {
     display: flex;
     flex-direction: column;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    @media (max-width: 768px) {
+        width: 1300px;
+        height: 600px;
+
+    }
   }
   
   /* Header Styles */
@@ -58,7 +64,8 @@ body {
     color: white;
     padding: 10px;
     text-align: center;
-    font-size: 1.5rem;
+    padding: auto;
+    font-size: 1em;
     font-weight: bold;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }

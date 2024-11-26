@@ -155,7 +155,9 @@ function playSurah(surah) {
     currentTime.textContent = formatTime(audio.currentTime);
   };
 }
-
+addEventListener("load", function() {
+  window.scrollTo(1, 0);
+}, false);
 playPauseButton.addEventListener("click", () => {
   if (isPlaying) {
     audio.pause();
