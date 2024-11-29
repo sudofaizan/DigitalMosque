@@ -7,6 +7,7 @@ const playPauseButton = document.getElementById("playPauseButton");
 
 let audio = new Audio();
 let isPlaying = false;
+const playbackSpeed = document.getElementById("playbackSpeed");
 
 // Generate Surah List
 const surahs = [
@@ -139,10 +140,25 @@ surahs.forEach(surah => {
   surahList.appendChild(li);
 });
 
+
+  
 // Play/Pause Functionality
 function playSurah(surah) {
   audio.src = `https://podcasts.qurancentral.com/urdu-translation-only/${surah.id}.mp3`;
   currentSurah.textContent = surah.name;
+//   audio.playbackRate = parseFloat(event.target.value);
+// audio.playbackRate = 1;
+console.log(audio.playbackRate.toString());
+// console.log(playbackSpeed.value);
+playbackSpeed.addEventListener("change", (event) => {
+      audio.playbackRate = parseFloat(event.target.value);
+    });
+  audio.playbackRate = parseFloat(playbackSpeed.value); // Set the current speed
+  progressBar.addEventListener("input", () => {
+      const newTime = (progressBar.value / 100) * audio.duration;
+    audio.currentTime = progressBar.value;
+    });
+// audio.currentTime = 20;
   audio.play();
   isPlaying = true;
   playPauseButton.textContent = "⏸️";
@@ -168,6 +184,8 @@ playPauseButton.addEventListener("click", () => {
   }
   isPlaying = !isPlaying;
 });
+// Seek Audio on Progress Bar Click
+
 
 // Format Time
 function formatTime(seconds) {
