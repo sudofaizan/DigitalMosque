@@ -7,6 +7,7 @@ docker rmi -f mosque
 docker build -t mosque .
 docker run -itd --name mosque -p 80:80 -p 443:443 mosque
 bash purge.sh
+echo "purged"
 update
 else 
 sleep 5
@@ -14,4 +15,3 @@ update
 fi
 }
 update
-
