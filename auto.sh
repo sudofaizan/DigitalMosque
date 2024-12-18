@@ -9,4 +9,5 @@ docker run -it --name mosque -p 80:80 -p 443:443 mosque
 else 
 sleep 500
 update
+fi
 }
