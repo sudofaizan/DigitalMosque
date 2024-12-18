@@ -7,7 +7,7 @@ docker rmi -f mosque
 docker build -t mosque .
 docker run -it --name mosque -p 80:80 -p 443:443 mosque
 else 
-sleep 500
+sleep 5
 update
 fi
 }
