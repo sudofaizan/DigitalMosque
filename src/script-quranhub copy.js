@@ -6,6 +6,28 @@ const totalTime = document.getElementById("totalTime");
 const playPauseButton = document.getElementById("playPauseButton");
 
 let audio = new Audio();
+let lastPlayedSurah1 = JSON.parse(localStorage.getItem("lastPlayedSurah1")) || null;
+console.log(lastPlayedSurah1);
+// if (lastPlayedSurah1 != null)
+// {
+//     console.log(lastPlayedSurah1);
+//     currentSurah.textContent = lastPlayedSurah1.name;
+//     audio.currentTime = lastPlayedSurah1.time
+//     progressBar.value = Math.floor(audio.currentTime);
+//     // surah = lastPlayedSurah1.name;
+    
+//     audio.src = `https://podcasts.qurancentral.com/mohamed-tablawi/mohamed-tablawi-${lastPlayedSurah1.id}.mp3`;
+//     audio.ontimeupdate = () => {
+//         progressBar.value = Math.floor(audio.currentTime);
+//         currentTime.textContent = formatTime(audio.currentTime);
+//         localStorage.setItem("lastPlayedSurah1", JSON.stringify({
+//             id: surah.id,
+//             name: surah.name,
+//             time: audio.currentTime,
+//             baseURL: audio.src
+//           }));
+//       };
+// }
 let isPlaying = false;
 const playbackSpeed = document.getElementById("playbackSpeed");
 
@@ -137,15 +159,52 @@ surahs.forEach(surah => {
       <button class="download-button">🔉</button>
     </div>`;
   li.addEventListener("click", () => playSurah(surah));
+  li.addEventListener("click", () => localStorage.removeItem("lastPlayedSurah1"));
   surahList.appendChild(li);
-});
 
+});
+if (lastPlayedSurah1 != null){
+    currentSurah.textContent = lastPlayedSurah1.name;
+
+    console.log("set name");
+    audio.src = `https://podcasts.qurancentral.com/urdu-translation-only/${lastPlayedSurah1.id}.mp3`;
+    audio.currentTime = lastPlayedSurah1.time;
+
+    progressBar.value = audio.currentTime,
+    currentTime.textContent = formatTime(lastPlayedSurah1.time);
+    audio.onloadedmetadata = () => {
+      totalTime.textContent = formatTime(audio.duration);
+      progressBar.max = Math.floor(audio.duration);
+    };
+    progressBar.addEventListener("input", () => {
+      const newTime = (progressBar.value / 100) * audio.duration;
+    audio.currentTime = progressBar.value;
+    });
+    audio.ontimeupdate = () => {
+        progressBar.value = audio.currentTime,
+        currentTime.textContent = formatTime(audio.currentTime);
+        playbackSpeed.addEventListener("change", (event) => {
+              audio.playbackRate = parseFloat(event.target.value);
+            });
+
+        localStorage.setItem("lastPlayedSurah1", JSON.stringify({
+            id: lastPlayedSurah1.id,
+            name: lastPlayedSurah1.name,
+            time: audio.currentTime,
+            baseURL: audio.src
+          }));
+      };
+}
 
   
 // Play/Pause Functionality
 function playSurah(surah) {
-  audio.src = `https://podcasts.qurancentral.com/urdu-translation-only/${surah.id}.mp3`;
-  currentSurah.textContent = surah.name;
+    currentSurah.textContent = surah.name;
+    audio.src = `https://podcasts.qurancentral.com/urdu-translation-only/${surah.id}.mp3`;
+
+
+
+  
 //   audio.playbackRate = parseFloat(event.target.value);
 // audio.playbackRate = 1;
 console.log(audio.playbackRate.toString());
@@ -169,7 +228,14 @@ playbackSpeed.addEventListener("change", (event) => {
   audio.ontimeupdate = () => {
     progressBar.value = Math.floor(audio.currentTime);
     currentTime.textContent = formatTime(audio.currentTime);
+    localStorage.setItem("lastPlayedSurah1", JSON.stringify({
+        id: surah.id,
+        name: surah.name,
+        time: audio.currentTime,
+        baseURL: audio.src
+      }));
   };
+  
 }
 addEventListener("load", function() {
   window.scrollTo(1, 0);

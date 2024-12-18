@@ -6,6 +6,28 @@ const totalTime = document.getElementById("totalTime");
 const playPauseButton = document.getElementById("playPauseButton");
 
 let audio = new Audio();
+let lastPlayedSurah = JSON.parse(localStorage.getItem("lastPlayedSurah")) || null;
+console.log(lastPlayedSurah);
+// if (lastPlayedSurah != null)
+// {
+//     console.log(lastPlayedSurah);
+//     currentSurah.textContent = lastPlayedSurah.name;
+//     audio.currentTime = lastPlayedSurah.time
+//     progressBar.value = Math.floor(audio.currentTime);
+//     // surah = lastPlayedSurah.name;
+    
+//     audio.src = `https://podcasts.qurancentral.com/mohamed-tablawi/mohamed-tablawi-${lastPlayedSurah.id}.mp3`;
+//     audio.ontimeupdate = () => {
+//         progressBar.value = Math.floor(audio.currentTime);
+//         currentTime.textContent = formatTime(audio.currentTime);
+//         localStorage.setItem("lastPlayedSurah", JSON.stringify({
+//             id: surah.id,
+//             name: surah.name,
+//             time: audio.currentTime,
+//             baseURL: audio.src
+//           }));
+//       };
+// }
 let isPlaying = false;
 const playbackSpeed = document.getElementById("playbackSpeed");
 
@@ -137,16 +159,49 @@ surahs.forEach(surah => {
       <button class="download-button">🔉</button>
     </div>`;
   li.addEventListener("click", () => playSurah(surah));
+  li.addEventListener("click", () => localStorage.removeItem("lastPlayedSurah"));
   surahList.appendChild(li);
-});
 
+});
+if (lastPlayedSurah != null){
+    currentSurah.textContent = lastPlayedSurah.name;
+
+    console.log("set name");
+    audio.src = `https://podcasts.qurancentral.com/mohamed-tablawi/mohamed-tablawi-${lastPlayedSurah.id}.mp3`;
+    audio.currentTime = lastPlayedSurah.time;
+    progressBar.value = lastPlayedSurah.time;
+    currentTime.textContent = formatTime(lastPlayedSurah.time);
+    audio.onloadedmetadata = () => {
+        totalTime.textContent = formatTime(audio.duration);
+        progressBar.max = Math.floor(audio.duration);
+      };
+      progressBar.addEventListener("input", () => {
+          const newTime = (progressBar.value / 100) * audio.duration;
+        audio.currentTime = progressBar.value;
+        });
+    audio.ontimeupdate = () => {
+        progressBar.value = Math.floor(audio.currentTime);
+        currentTime.textContent = formatTime(audio.currentTime);
+        playbackSpeed.addEventListener("change", (event) => {
+              audio.playbackRate = parseFloat(event.target.value);
+            });
+        localStorage.setItem("lastPlayedSurah", JSON.stringify({
+            id: lastPlayedSurah.id,
+            name: lastPlayedSurah.name,
+            time: audio.currentTime,
+            baseURL: audio.src
+          }));
+      };
+}
 
   
 // Play/Pause Functionality
 function playSurah(surah) {
+    currentSurah.textContent = surah.name;
+    audio.src = `https://podcasts.qurancentral.com/mohamed-tablawi/mohamed-tablawi-${surah.id}.mp3`;
+
+
   
-  audio.src = `https://podcasts.qurancentral.com/mohamed-tablawi/mohamed-tablawi-${surah.id}.mp3`;
-  currentSurah.textContent = surah.name;
 //   audio.playbackRate = parseFloat(event.target.value);
 // audio.playbackRate = 1;
 console.log(audio.playbackRate.toString());
@@ -163,6 +218,7 @@ playbackSpeed.addEventListener("change", (event) => {
   audio.play();
   isPlaying = true;
   playPauseButton.textContent = "⏸️";
+  
   audio.onloadedmetadata = () => {
     totalTime.textContent = formatTime(audio.duration);
     progressBar.max = Math.floor(audio.duration);
@@ -170,7 +226,14 @@ playbackSpeed.addEventListener("change", (event) => {
   audio.ontimeupdate = () => {
     progressBar.value = Math.floor(audio.currentTime);
     currentTime.textContent = formatTime(audio.currentTime);
+    localStorage.setItem("lastPlayedSurah", JSON.stringify({
+        id: surah.id,
+        name: surah.name,
+        time: audio.currentTime,
+        baseURL: audio.src
+      }));
   };
+  
 }
 addEventListener("load", function() {
   window.scrollTo(1, 0);
