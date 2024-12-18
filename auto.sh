@@ -11,3 +11,4 @@ sleep 500
 update
 fi
 }
+update
