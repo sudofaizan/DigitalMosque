@@ -167,7 +167,7 @@ if (lastPlayedSurah != null){
     currentSurah.textContent = lastPlayedSurah.name;
 
     console.log("set name");
-    audio.src = `https://podcasts.qurancentral.com/mohamed-tablawi/mohamed-tablawi-${lastPlayedSurah.id}.mp3`;
+    audio.src = `https://podcasts.qurancentral.com/aziz-alili/aziz-alili-${lastPlayedSurah.id}.mp3`;
     audio.currentTime = lastPlayedSurah.time;
     progressBar.value = lastPlayedSurah.time;
     currentTime.textContent = formatTime(lastPlayedSurah.time);
@@ -198,7 +198,7 @@ if (lastPlayedSurah != null){
 // Play/Pause Functionality
 function playSurah(surah) {
     currentSurah.textContent = surah.name;
-    audio.src = `https://podcasts.qurancentral.com/mohamed-tablawi/mohamed-tablawi-${surah.id}.mp3`;
+    audio.src = `https://podcasts.qurancentral.com/aziz-alili/aziz-alili-${surah.id}.mp3`;
 
 
   
