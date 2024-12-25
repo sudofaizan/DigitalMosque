@@ -2,11 +2,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const needle = document.getElementById('needle');
     const headingText = document.getElementById('heading');
   
-    // Check if DeviceOrientationEvent is supported
+    // Add device orientation event
     if (window.DeviceOrientationEvent) {
-      console.log('DeviceOrientationEvent is supported.');
-  
-      // For iOS 13+ or devices requiring permission
       if (typeof DeviceOrientationEvent.requestPermission === 'function') {
         const requestPermissionBtn = document.createElement('button');
         requestPermissionBtn.textContent = 'Enable Compass';
@@ -19,7 +16,9 @@ document.addEventListener('DOMContentLoaded', () => {
             .then(permissionState => {
               if (permissionState === 'granted') {
                 document.body.removeChild(requestPermissionBtn);
-                window.addEventListener('deviceorientation', updateCompass);
+                window.addEventListener('deviceorientation', event =>
+                  updateCompass(event)
+                );
               } else {
                 alert('Permission denied for accessing device orientation.');
               }
@@ -31,18 +30,28 @@ document.addEventListener('DOMContentLoaded', () => {
         });
       } else {
         // For devices that don't require explicit permission
-        window.addEventListener('deviceorientation', updateCompass);
+        window.addEventListener('deviceorientation', event => updateCompass(event));
       }
     } else {
       alert('Device Orientation is not supported on this device/browser.');
     }
   
-    // Function to update the compass needle
+    // Update compass needle to point to the correct direction
     function updateCompass(event) {
       if (event.alpha !== null) {
-        const heading = Math.round(event.alpha); // Use the alpha value for the heading
-        needle.style.transform = `translate(-50%, -100%) rotate(${heading}deg)`;
-        headingText.textContent = `Heading: ${heading}°`;
+        const alpha = event.alpha; // Rotation around Z-axis (0° is North)
+        const beta = event.beta; // Rotation around X-axis (tilt forward/backward)
+        const gamma = event.gamma; // Rotation around Y-axis (tilt left/right)
+  
+        // Correct for screen orientation
+        const screenOrientation = window.screen.orientation.angle || 0;
+        const heading = (alpha + screenOrientation) % 360;
+  
+        // Rotate the needle
+        needle.style.transform = `translate(-50%, -100%) rotate(${-heading}deg)`;
+  
+        // Update heading text
+        headingText.textContent = `Heading: ${Math.round(heading)}°`;
       } else {
         alert('Device orientation data is unavailable.');
       }
