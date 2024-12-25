@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arabic Alphabets</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 20px;
+      background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+      background-image: url('aqsa.webp'); /* Replace with your laptop/tablet image */
+    }
+    .alphabet-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(60px, 1fr)); /* Responsive layout */
+      gap: 10px;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+    .alphabet {
+        padding: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    border: 2px solid goldenrod;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #daa52042;
+    transition: background-color 0.3s;
+    }
+    .alphabet:hover {
+      background-color: #daa520ab;
+    }
+    h1 {
+      margin-bottom: 20px;
+      font-family: 'Courier New', Courier, monospace;
+    }
+  </style>
+</head>
+<body>
+  <h1>حروف الهجاء</h1>
+  <h1>Arabic Alphabets</h1>
+  <div class="alphabet-grid">
+    <div class="alphabet" data-sound="https://www.arabicreadingcourse.com/audio/isolated-letters/alif.mp3">ا</div>
+    <div class="alphabet" data-sound="baa.mp3">ب</div>
+    <div class="alphabet" data-sound="taa.mp3">ت</div>
+    <div class="alphabet" data-sound="thaa.mp3">ث</div>
+    <div class="alphabet" data-sound="jeem.mp3">ج</div>
+    <div class="alphabet" data-sound="haa.mp3">ح</div>
+    <div class="alphabet" data-sound="khaa.mp3">خ</div>
+    <div class="alphabet" data-sound="daal.mp3">د</div>
+    <div class="alphabet" data-sound="dhaal.mp3">ذ</div>
+    <div class="alphabet" data-sound="raa.mp3">ر</div>
+    <div class="alphabet" data-sound="zaa.mp3">ز</div>
+    <div class="alphabet" data-sound="seen.mp3">س</div>
+    <div class="alphabet" data-sound="sheen.mp3">ش</div>
+    <div class="alphabet" data-sound="saad.mp3">ص</div>
+    <div class="alphabet" data-sound="daad.mp3">ض</div>
+    <div class="alphabet" data-sound="ta.mp3">ط</div>
+    <div class="alphabet" data-sound="zaa.mp3">ظ</div>
+    <div class="alphabet" data-sound="ain.mp3">ع</div>
+    <div class="alphabet" data-sound="ghain.mp3">غ</div>
+    <div class="alphabet" data-sound="faa.mp3">ف</div>
+    <div class="alphabet" data-sound="qaaf.mp3">ق</div>
+    <div class="alphabet" data-sound="kaaf.mp3">ك</div>
+    <div class="alphabet" data-sound="laam.mp3">ل</div>
+    <div class="alphabet" data-sound="meem.mp3">م</div>
+    <div class="alphabet" data-sound="noon.mp3">ن</div>
+    <div class="alphabet" data-sound="haa.mp3">ه</div>
+    <div class="alphabet" data-sound="waw.mp3">و</div>
+    <div class="alphabet" data-sound="yaa.mp3">ي</div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
