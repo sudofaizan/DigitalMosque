@@ -36,7 +36,7 @@
       transform: translate(-50%, -100%);
     }
     #compass::before {
-      content: 'N';
+      content: 'W';
       position: absolute;
       top: 5px;
       left: 50%;
@@ -45,7 +45,7 @@
       font-size: 18px;
     }
     #compass::after {
-      content: 'S';
+      content: 'E';
       position: absolute;
       bottom: 5px;
       left: 50%;
@@ -59,13 +59,13 @@
       font-size: 18px;
     }
     .east {
-      content: 'E';
+      content: 'N';
       right: 5px;
       top: 50%;
       transform: translateY(-50%);
     }
     .west {
-      content: 'W';
+      content: 'S';
       left: 5px;
       top: 50%;
       transform: translateY(-50%);
@@ -76,8 +76,8 @@
   <h1>Compass App</h1>
   <div id="compass">
     <div id="needle"></div>
-    <div class="east-west east">E</div>
-    <div class="east-west west">W</div>
+    <div class="east-west east">N</div>
+    <div class="east-west west">S</div>
   </div>
   <p id="heading">Heading: 0°</p>
   <script src="compass.js"></script>
