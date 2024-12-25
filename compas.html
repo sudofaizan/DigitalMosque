@@ -17,7 +17,16 @@
       color: #fff;
       text-align: center;
     }
-
+    #needle {
+    width: 4px; /* Thickness of the needle */
+    height: 120px; /* Length of the needle */
+    background: red;
+    position: absolute;
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform-origin: bottom center; /* Anchor the rotation to the bottom center */
+    transform: translate(-50%, -100%) rotate(0deg); /* Initial positioning */
+    }
     .compass-container {
       position: relative;
       width: 300px;
@@ -76,7 +85,7 @@
   <script>
     const needle = document.getElementById('needle');
     const headingElement = document.getElementById('heading');
-
+  
     // Check if DeviceOrientationEvent is supported
     if (window.DeviceOrientationEvent) {
       // Request permission for iOS devices
@@ -84,27 +93,37 @@
         DeviceOrientationEvent.requestPermission()
           .then(permission => {
             if (permission === 'granted') {
+              console.log('Permission granted.');
               window.addEventListener('deviceorientation', updateCompass);
+            } else {
+              console.error('Permission denied.');
             }
           })
-          .catch(console.error);
+          .catch(err => {
+            console.error('Error requesting permission:', err);
+          });
       } else {
         // For non-iOS devices
+        console.log('Listening for device orientation.');
         window.addEventListener('deviceorientation', updateCompass);
       }
     } else {
       alert('DeviceOrientationEvent is not supported on this device.');
     }
-
+  
     function updateCompass(event) {
-      const alpha = event.alpha; // Rotation around Z-axis (0–360°)
-
-      // Update the compass needle rotation
-      needle.style.transform = `rotate(${alpha}deg)`;
-
-      // Update the heading value
-      const heading = Math.round(alpha);
-      headingElement.textContent = heading;
+      if (event.alpha !== null) {
+        const alpha = event.alpha; // Rotation around Z-axis (0–360°)
+  
+        // Update the compass needle rotation
+        needle.style.transform = `rotate(${alpha}deg)`;
+  
+        // Update the heading value
+        const heading = Math.round(alpha);
+        headingElement.textContent = heading;
+      } else {
+        console.error('Device orientation data is unavailable.');
+      }
     }
   </script>
 </body>
