@@ -3,128 +3,83 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Compass App v1</title>
+  <title>Compass App</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      background: linear-gradient(to bottom, #1e3c72, #2a5298);
-      color: #fff;
+      font-family: Arial, sans-serif;
+      background-color: #004d99;
+      color: white;
       text-align: center;
+      overflow: hidden;
     }
-    #needle {
-    width: 4px; /* Thickness of the needle */
-    height: 120px; /* Length of the needle */
-    background: red;
-    position: absolute;
-    top: 50%; /* Center vertically */
-    left: 50%; /* Center horizontally */
-    transform-origin: bottom center; /* Anchor the rotation to the bottom center */
-    transform: translate(-50%, -100%) rotate(0deg); /* Initial positioning */
+    h1 {
+      margin-top: 20px;
     }
-    .compass-container {
-      position: relative;
+    #compass {
       width: 300px;
       height: 300px;
-      border: 5px solid #fff;
+      margin: 20px auto;
+      background-color: black;
+      border: 5px solid white;
       border-radius: 50%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: radial-gradient(circle, #1a1a1a, #333);
-      box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
+      position: relative;
     }
-
-    .compass-needle {
-      position: absolute;
-      width: 10px;
+    #needle {
+      width: 4px;
       height: 150px;
-      background: red;
-      transform-origin: bottom center;
-      transform: rotate(0deg);
-      border-radius: 5px;
-    }
-
-    .directions {
+      background-color: red;
       position: absolute;
-      font-size: 18px;
-      font-weight: bold;
+      top: 50%;
+      left: 50%;
+      transform-origin: 50% 100%;
+      transform: translate(-50%, -100%);
     }
-
-    .directions.north { top: 10px; left: 50%; transform: translateX(-50%); }
-    .directions.south { bottom: 10px; left: 50%; transform: translateX(-50%); }
-    .directions.east { right: 10px; top: 50%; transform: translateY(-50%); }
-    .directions.west { left: 10px; top: 50%; transform: translateY(-50%); }
-
-    .angle {
-      margin-top: 20px;
-      font-size: 24px;
+    #compass::before {
+      content: 'N';
+      position: absolute;
+      top: 5px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: white;
+      font-size: 18px;
+    }
+    #compass::after {
+      content: 'S';
+      position: absolute;
+      bottom: 5px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: white;
+      font-size: 18px;
+    }
+    .east-west {
+      position: absolute;
+      color: white;
+      font-size: 18px;
+    }
+    .east {
+      content: 'E';
+      right: 5px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    .west {
+      content: 'W';
+      left: 5px;
+      top: 50%;
+      transform: translateY(-50%);
     }
   </style>
 </head>
 <body>
-  <div>
-    <h1>Compass App</h1>
-    <div class="compass-container">
-      <div class="compass-needle" id="needle"></div>
-      <div class="directions north">N</div>
-      <div class="directions south">S</div>
-      <div class="directions east">E</div>
-      <div class="directions west">W</div>
-    </div>
-    <div class="angle">
-      Heading: <span id="heading">0</span>°
-    </div>
+  <h1>Compass App</h1>
+  <div id="compass">
+    <div id="needle"></div>
+    <div class="east-west east">E</div>
+    <div class="east-west west">W</div>
   </div>
-
-  <script>
-    const needle = document.getElementById('needle');
-    const headingElement = document.getElementById('heading');
-  
-    // Check if DeviceOrientationEvent is supported
-    if (window.DeviceOrientationEvent) {
-      // Request permission for iOS devices
-      if (typeof DeviceOrientationEvent.requestPermission === 'function') {
-        DeviceOrientationEvent.requestPermission()
-          .then(permission => {
-            if (permission === 'granted') {
-              console.log('Permission granted.');
-              window.addEventListener('deviceorientation', updateCompass);
-            } else {
-              console.error('Permission denied.');
-            }
-          })
-          .catch(err => {
-            console.error('Error requesting permission:', err);
-          });
-      } else {
-        // For non-iOS devices
-        console.log('Listening for device orientation.');
-        window.addEventListener('deviceorientation', updateCompass);
-      }
-    } else {
-      alert('DeviceOrientationEvent is not supported on this device.');
-    }
-  
-    function updateCompass(event) {
-      if (event.alpha !== null) {
-        const alpha = event.alpha; // Rotation around Z-axis (0–360°)
-  
-        // Update the compass needle rotation
-        needle.style.transform = `rotate(${alpha}deg)`;
-  
-        // Update the heading value
-        const heading = Math.round(alpha);
-        headingElement.textContent = heading;
-      } else {
-        console.error('Device orientation data is unavailable.');
-      }
-    }
-  </script>
+  <p id="heading">Heading: 0°</p>
+  <script src="compass.js"></script>
 </body>
 </html>
