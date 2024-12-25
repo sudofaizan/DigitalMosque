@@ -5,6 +5,7 @@ cd /home/ec2-user/DigitalMosque
 # update(){
 # if git pull --rebase --force|grep Updating
 # then
+git pull --rebase --force
 docker rm -f mosque
 docker rmi -f mosque
 docker build -t mosque . --no-cache
