@@ -3,83 +3,70 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Compass App</title>
+  <title>Qibla Compass</title>
   <style>
     body {
-      margin: 0;
       font-family: Arial, sans-serif;
-      background-color: #004d99;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #005bdb;
       color: white;
-      text-align: center;
-      overflow: hidden;
-    }
-    h1 {
-      margin-top: 20px;
     }
     #compass {
+      position: relative;
       width: 300px;
       height: 300px;
-      margin: 20px auto;
       background-color: black;
-      border: 5px solid white;
+      border: 10px solid white;
       border-radius: 50%;
-      position: relative;
     }
-    #needle {
-      width: 4px;
-      height: 150px;
-      background-color: red;
+    .needle {
       position: absolute;
+      width: 2px;
+      height: 140px;
+      background-color: red;
       top: 50%;
       left: 50%;
       transform-origin: 50% 100%;
-      transform: translate(-50%, -100%);
+      transform: translate(-50%, -100%) rotate(0deg);
     }
-    #compass::before {
-      content: 'W';
+    .directions {
       position: absolute;
-      top: 5px;
-      left: 50%;
-      transform: translateX(-50%);
-      color: white;
-      font-size: 18px;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 20px;
+      font-weight: bold;
     }
-    #compass::after {
-      content: 'E';
+    .directions span {
       position: absolute;
-      bottom: 5px;
-      left: 50%;
-      transform: translateX(-50%);
-      color: white;
-      font-size: 18px;
     }
-    .east-west {
-      position: absolute;
-      color: white;
-      font-size: 18px;
-    }
-    .east {
-      content: 'N';
-      right: 5px;
-      top: 50%;
-      transform: translateY(-50%);
-    }
-    .west {
-      content: 'S';
-      left: 5px;
-      top: 50%;
-      transform: translateY(-50%);
-    }
+    #N { top: 5px; }
+    #E { right: 5px; }
+    #S { bottom: 5px; }
+    #W { left: 5px; }
   </style>
 </head>
 <body>
   <h1>Compass App</h1>
   <div id="compass">
-    <div id="needle"></div>
-    <div class="east-west east">N</div>
-    <div class="east-west west">S</div>
+    <div class="needle" id="needle"></div>
+    <div class="directions">
+      <span id="N">N</span>
+      <span id="E">E</span>
+      <span id="S">S</span>
+      <span id="W">W</span>
+    </div>
   </div>
-  <p id="heading">Heading: 0°</p>
+  <p id="qiblaDirectionText">Qibla Direction: Calculating...</p>
+
   <script src="compass.js"></script>
 </body>
 </html>
