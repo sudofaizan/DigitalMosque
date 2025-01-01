@@ -9,7 +9,7 @@ document.querySelectorAll('.alphabet').forEach(alphabet => {
       console.log('Downloading audio...');
       try {
         // Fetch the audio file and convert it to a Base64 string
-        const response = await fetch(sound);
+        const response = sound;
         const blob = await response.blob();
         cachedAudio = await new Promise(resolve => {
           const reader = new FileReader();
