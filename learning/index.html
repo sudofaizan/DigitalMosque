@@ -6,7 +6,7 @@
   <title>DigitalMosque - Arabic Alphabets</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: cursive;
       text-align: center;
       margin: 20px;
       background-repeat: no-repeat;
@@ -17,20 +17,24 @@
     .alphabet-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(60px, 1fr)); /* Responsive layout */
-      gap: 10px;
+      gap: 20px;
       max-width: 500px;
-      margin: 0 auto;
+      margin: 10px auto;
     }
     
     .alphabet {
+      
     padding: 10px;
+    word-break: break-all;
+    width: 50px;
+    hyphens: auto;
     font-family: cursive;
-    font-size: 16px;
+    font-size: 20px;
     font-weight: bold;
-    text-align: center;
+    /* text-align: center; */
     border: 3px solid goldenrod;
     border-radius: 8px;
-    cursor: pointer;
+    /* cursor: pointer; */
     background-color: #daa52042;
     transition: background-color 0.3s;
     }
@@ -40,95 +44,44 @@
     h1 {
 
       margin-bottom: 20px;
-      font-family: fan;
-    }
+      font-family: cursive;
+        }
   </style>
 </head>
 <body>
   <h1>حروف الهجاء</h1>
   <h1>Arabic Alphabets</h1>
   <div class="alphabet-grid">
-    <div class="alphabet" data-sound="audio/alif.mp3">A ا
-      alif
-    </div>
-    <div class="alphabet" data-sound="audio/ba.mp3">B ب
-      ba
-    </div>
-    <div class="alphabet" data-sound="audio/ta.mp3">T ت
-      ta
-    </div>
-    <div class="alphabet" data-sound="audio/tha.mp3">Th ث
-      sa
-    </div>
-    <div class="alphabet" data-sound="audio/jiim.mp3">J ج
-      jiim
-    </div>
-    <div class="alphabet" data-sound="audio/hha.mp3">H(deep) ح
-      hha
-    </div>
-    <div class="alphabet" data-sound="audio/kha.mp3">Kh خ
-      kha
-    </div>
-    <div class="alphabet" data-sound="audio/daal.mp3">D د
-      daal
-    </div>
-    <div class="alphabet" data-sound="audio/thaal.mp3">Dh ذ
-      thaal
-    </div>
-    <div class="alphabet" data-sound="audio/ra.mp3">R ر
-      ra
-    </div>
-    <div class="alphabet" data-sound="audio/zay.mp3">Z ز
-      zay
-    </div>
-    <div class="alphabet" data-sound="audio/siin.mp3">S س
-      siin
-    </div>
-    <div class="alphabet" data-sound="audio/shiin.mp3">Sh ش
-      shiin
-    </div>
-    <div class="alphabet" data-sound="audio/saad.mp3">S(emphatic) ص
-      saad
-    </div>
-    <div class="alphabet" data-sound="audio/daad.mp3">D(emphatic) ض
-      daad
-    </div>
-    <div class="alphabet" data-sound="audio/taa.mp3">T(emphatic) ط
-      taa
-    </div>
-    <div class="alphabet" data-sound="audio/thaa.mp3">Z (emphatic)ظ
-      tha
-    </div>
-    <div class="alphabet" data-sound="audio/ayn.mp3">ع
-      ayn
-    </div>
-    <div class="alphabet" data-sound="audio/ghayn.mp3">Gh غ
-      ghayn
-    </div>
-    <div class="alphabet" data-sound="audio/fa.mp3">F ف
-      fa
-    </div>
-    <div class="alphabet" data-sound="audio/qaf.mp3">Q ق
-      qaf
-    </div>
-    <div class="alphabet" data-sound="audio/kaf.mp3">K ك
-      kaf
-    </div>
-    <div class="alphabet" data-sound="audio/lam.mp3">L ل
-      lam
-    </div>
-    <div class="alphabet" data-sound="audio/miim.mp3">M م
-      miim</div>
-    <div class="alphabet" data-sound="audio/nuun.mp3">N ن
-      nuun
-    </div>
-    <div class="alphabet" data-sound="audio/waw.mp3">W و
-      waw
-    </div>
+    
+    <div class="alphabet" data-sound="audio/alif.mp3">Aa-ا</div>
+    
+    <div class="alphabet" data-sound="audio/ba.mp3">B-ب</div>
+    <div class="alphabet" data-sound="audio/ta.mp3">T-ت</div>
+    <div class="alphabet" data-sound="audio/tha.mp3">S-ث</div>
+    <div class="alphabet" data-sound="audio/jiim.mp3">J-ج</div>
+    <div class="alphabet" data-sound="audio/hha.mp3">H-ح</div>
+    <div class="alphabet" data-sound="audio/kha.mp3">Kh-خ</div>
+    <div class="alphabet" data-sound="audio/daal.mp3">D-د</div>
+    <div class="alphabet" data-sound="audio/thaal.mp3">Za-ذ</div>
+    <div class="alphabet" data-sound="audio/ra.mp3">R-ر</div>
+    <div class="alphabet" data-sound="audio/zay.mp3">Za-ز</div>
+    <div class="alphabet" data-sound="audio/siin.mp3">Si-س</div>
+    <div class="alphabet" data-sound="audio/shiin.mp3">Sh-ش</div>
+    <div class="alphabet" data-sound="audio/saad.mp3">S-ص</div>
+    <div class="alphabet" data-sound="audio/daad.mp3">Z-ض</div>
+    <div class="alphabet" data-sound="audio/taa.mp3">T-ط</div>
+    <div class="alphabet" data-sound="audio/thaa.mp3">Z-ظ</div>
+    <div class="alphabet" data-sound="audio/ayn.mp3">A-ع</div>
+    <div class="alphabet" data-sound="audio/ghayn.mp3">Gh-غ</div>
+    <div class="alphabet" data-sound="audio/fa.mp3">F-ف</div>
+    <div class="alphabet" data-sound="audio/qaf.mp3">Q-ق</div>
+    <div class="alphabet" data-sound="audio/kaf.mp3">K-ك</div>
+    <div class="alphabet" data-sound="audio/lam.mp3">L-ل</div>
+    <div class="alphabet" data-sound="audio/miim.mp3">M-م</div>
+    <div class="alphabet" data-sound="audio/nuun.mp3">N-ن</div>
+    <div class="alphabet" data-sound="audio/waw.mp3">V-و</div>
     <!-- <div class="alphabet" data-sound="audio/.mp3">هـ</div> -->
-    <div class="alphabet" data-sound="audio/ya.mp3">Y ي
-      ya
-    </div>
+    <div class="alphabet" data-sound="audio/ya.mp3">Ya-ي</div>
   </div>
   <script src="script.js"></script>
 </body>
