@@ -4,7 +4,10 @@ const progressBar = document.getElementById("progressBar");
 const currentTime = document.getElementById("currentTime");
 const totalTime = document.getElementById("totalTime");
 const playPauseButton = document.getElementById("playPauseButton");
-
+const Loopbutton = document.getElementById("Loop");
+const autobutton = document.getElementById("auto");
+const autoplayNext = document.createElement("label"); // Added for autoplay
+const infiniteLoop = document.createElement("label"); // Added for infinite loop
 let audio = new Audio();
 let lastPlayedSurah1 = JSON.parse(localStorage.getItem("lastPlayedSurah1")) || null;
 console.log(lastPlayedSurah1);
@@ -194,6 +197,7 @@ if (lastPlayedSurah1 != null){
             baseURL: audio.src
           }));
       };
+
 }
 
   
@@ -235,7 +239,19 @@ playbackSpeed.addEventListener("change", (event) => {
         baseURL: audio.src
       }));
   };
-  
+  audio.onended = () => {
+      
+    if (loopEnabled) {
+      audio.currentTime = 0;
+      audio.play();
+    } else if (autoplayEnabled) {
+      const nextIndex = surahs.findIndex(s => s.id === surah.id) + 1;
+      if (nextIndex < surahs.length) {
+        playSurah(surahs[nextIndex]);
+      }
+      
+    }
+  };
 }
 addEventListener("load", function() {
   window.scrollTo(1, 0);
@@ -251,9 +267,28 @@ playPauseButton.addEventListener("click", () => {
   isPlaying = !isPlaying;
 });
 // Seek Audio on Progress Bar Click
+Loopbutton.style.display ='none';
+autobutton.style.display ='block';
+autobutton.addEventListener("click", () => {
+    autobutton.style.display ='none';
+    Loopbutton.style.display ='block';
+    autoplayEnabled = true;
+    loopEnabled = false;
+    
+  });
+  document.querySelector(".controls").appendChild(autoplayNext);
+  
+  // Infinite Loop Feature
+  
+  Loopbutton.addEventListener("click", () => {
+   autobutton.style.display ='block';
+    Loopbutton.style.display ='none';
+    loopEnabled = true;
+    autoplayEnabled = false;
 
-
-// Format Time
+  });
+  document.querySelector(".controls").appendChild(infiniteLoop);
+  
 function formatTime(seconds) {
   const mins = Math.floor(seconds / 60);
   const secs = Math.floor(seconds % 60);

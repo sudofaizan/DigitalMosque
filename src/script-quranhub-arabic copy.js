@@ -4,7 +4,10 @@ const progressBar = document.getElementById("progressBar");
 const currentTime = document.getElementById("currentTime");
 const totalTime = document.getElementById("totalTime");
 const playPauseButton = document.getElementById("playPauseButton");
-
+const Loopbutton = document.getElementById("Loop");
+const autobutton = document.getElementById("auto");
+const autoplayNext = document.createElement("label"); // Added for autoplay
+const infiniteLoop = document.createElement("label"); // Added for infinite loop
 let audio = new Audio();
 let lastPlayedSurah = JSON.parse(localStorage.getItem("lastPlayedSurah")) || null;
 console.log(lastPlayedSurah);
@@ -233,7 +236,18 @@ playbackSpeed.addEventListener("change", (event) => {
         baseURL: audio.src
       }));
   };
-  
+  audio.onended = () => {
+      
+    if (loopEnabled) {
+      audio.currentTime = 0;
+      audio.play();
+    } else if (autoplayEnabled) {
+      const nextIndex = surahs.findIndex(s => s.id === surah.id) + 1;
+      if (nextIndex < surahs.length) {
+        playSurah(surahs[nextIndex]);
+      }
+    }
+  };
 }
 addEventListener("load", function() {
   window.scrollTo(1, 0);
@@ -257,3 +271,25 @@ function formatTime(seconds) {
   const secs = Math.floor(seconds % 60);
   return `${mins.toString().padStart(2, "0")}:${secs.toString().padStart(2, "0")}`;
 }
+Loopbutton.style.display ='none';
+autobutton.style.display ='block';
+autobutton.addEventListener("click", () => {
+    autobutton.style.display ='none';
+    Loopbutton.style.display ='block';
+    autoplayEnabled = true;
+    loopEnabled = false;
+    
+  });
+  document.querySelector(".controls").appendChild(autoplayNext);
+  
+  // Infinite Loop Feature
+  
+  Loopbutton.addEventListener("click", () => {
+   autobutton.style.display ='block';
+    Loopbutton.style.display ='none';
+    loopEnabled = true;
+    autoplayEnabled = false;
+
+  });
+  document.querySelector(".controls").appendChild(infiniteLoop);
+  
